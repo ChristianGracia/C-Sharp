@@ -9,6 +9,7 @@ namespace Test
             var man = new Man();
             var cart = new Cart ();
             var dog = new Dog ();
+            var woman = new Woman(); 
         }
     }
     public class Object
@@ -23,15 +24,24 @@ namespace Test
 
     }
 
+    public class Human : Object
+    {
+        public Human()
+        {
+
+        }
+        public string name { get; set; }
+    }
+
     // class inherits properties
-    public class Man : Object
+    public class Man : Human
     {
         public Man() {
         }
-        public string name { get; set; }
+     
 
     }
-    public class Cart
+    public class Cart : Object
     {
         public Cart()
         {
@@ -41,13 +51,21 @@ namespace Test
     public string brand { get; set; }
     }
 
-    public class Dog
+    public class Dog : Object
     {
         public Dog()
         {
 
         }
         public string breed { get; set; }
+    }
+
+    public class Woman : Human
+    {
+        public Woman()
+        {
+
+        }
     }
 
 

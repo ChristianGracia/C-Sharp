@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chris\\Documents\\cSharp\\constructorTest\\Test\\Test.csproj",
+      "projectUniqueName": "C:\\Users\\chris\\Documents\\cSharp\\Inheritance\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "C:\\Users\\chris\\Documents\\cSharp\\constructorTest\\Test\\Test.csproj",
+      "projectPath": "C:\\Users\\chris\\Documents\\cSharp\\Inheritance\\Test\\Test.csproj",
       "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chris\\Documents\\cSharp\\constructorTest\\Test\\obj\\",
+      "outputPath": "C:\\Users\\chris\\Documents\\cSharp\\Inheritance\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
