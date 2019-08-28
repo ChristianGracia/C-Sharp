@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chris\\Documents\\cSharp\\Test\\Test\\Test.csproj": {}
+    "C:\\Users\\chris\\Documents\\cSharp\\constructorTest\\Test\\Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chris\\Documents\\cSharp\\Test\\Test\\Test.csproj": {
+    "C:\\Users\\chris\\Documents\\cSharp\\constructorTest\\Test\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chris\\Documents\\cSharp\\Test\\Test\\Test.csproj",
+        "projectUniqueName": "C:\\Users\\chris\\Documents\\cSharp\\constructorTest\\Test\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "C:\\Users\\chris\\Documents\\cSharp\\Test\\Test\\Test.csproj",
+        "projectPath": "C:\\Users\\chris\\Documents\\cSharp\\constructorTest\\Test\\Test.csproj",
         "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\Documents\\cSharp\\Test\\Test\\obj\\",
+        "outputPath": "C:\\Users\\chris\\Documents\\cSharp\\constructorTest\\Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
