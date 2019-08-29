@@ -6,16 +6,16 @@ namespace SeriesMinReducer
     {
         static void Main(string[] args)
         {
-            string[] series;
-  
-            Console.WriteLine("Input a series of numbers");
-            series = Console.ReadLine();
-           
-            foreach(var x in series)
-                Console.WriteLine(x);
+            var numbers = new List<int>();
+    
+            Console.WriteLine("Enter a series of numbers to be sorted: ");
+            var answer = Console.ReadLine().Split(',');
 
-
-
+            foreach (var x in answer)
+            {
+                numbers.Add(Int32.Parse(x.Trim()));
+       
+            }
 
         }
     }

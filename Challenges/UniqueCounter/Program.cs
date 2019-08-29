@@ -16,7 +16,8 @@ namespace UniqueCounter
                 Console.WriteLine("input numbers to count uniques");
                 var number = Console.ReadLine();
                 if (number == "quit")
-                   flag = !flag;
+                    flag = !flag;
+                Console.WriteLine("type 'quit' to stop and sort");
 
 
                 if (!numbers.Contains(number))
