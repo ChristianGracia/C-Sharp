@@ -12,7 +12,6 @@ namespace RandomNumberGuesser
             var counter = 0;
             while (counter < 4)
             {
-                Console.WriteLine(randomNumber);
                 Console.WriteLine("Guess the number between 1-10");
                 var guess = Int32.Parse(Console.ReadLine());
 
