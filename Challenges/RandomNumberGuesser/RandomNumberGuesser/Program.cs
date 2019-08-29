@@ -16,12 +16,19 @@ namespace RandomNumberGuesser
                 var guess = Int32.Parse(Console.ReadLine());
 
                 if (guess == randomNumber)
-                { Console.WriteLine("correct!!!");
+                {
+                    Console.WriteLine("correct!!!");
                     break;
                 }
 
                 else
+                
+                {
+                    Console.WriteLine("wrong!!!");
+                    if (counter == 3)
+                        Console.WriteLine("you lost!!!");
                     counter++;
+                }
             }
 
         }
