@@ -38,7 +38,6 @@ namespace Strings
 
             float price = 19.99f;
             Console.WriteLine(price.ToString("C"));
-
         }
     }
 }
