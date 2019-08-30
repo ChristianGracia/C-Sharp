@@ -6,7 +6,6 @@ namespace NumberMax
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("Enter a number: ");
 
             int firstNumber = Int32.Parse(Console.ReadLine());
@@ -18,9 +17,6 @@ namespace NumberMax
             int secondNumber = Int32.Parse(Console.ReadLine());
 
             Console.WriteLine("B = " + secondNumber);
-
-
-            
             bool flag = false;
 
             if (firstNumber > secondNumber)
@@ -29,10 +25,6 @@ namespace NumberMax
             var max = flag ? firstNumber : secondNumber;
 
             Console.WriteLine("The Higher Number is: " + max);
-
-
-
-
         }
     }
 }
