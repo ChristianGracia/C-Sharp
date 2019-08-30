@@ -15,8 +15,6 @@ namespace ConsecutiveSeries
             foreach (var x in numberArray)
                 Console.WriteLine(x);
 
-
-
             for (var i = 0; i < numberArray.Length -1; i++)
                 if (Convert.ToInt32(numberArray[i]) != (Convert.ToInt32(numberArray[i + 1]) - 1))
                     consecutiveFlag = false;
