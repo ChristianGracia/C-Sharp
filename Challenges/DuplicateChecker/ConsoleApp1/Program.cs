@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
@@ -11,11 +12,23 @@ namespace ConsoleApp1
             var series = Console.ReadLine();
             if (series == "")
                 inputFlag = false;
-            if (inputFlag)
-                Console.WriteLine("correct");
-            else
+
+            if (!inputFlag)
                 Console.WriteLine("Incorrect");
-                
+            else
+            {
+                Console.WriteLine("input: " + series);
+                var numberArray = series.Split("-");
+                var numberList = new List<int>();
+
+                for (var i = 0; i < numberArray.Length - 1; i++)
+                {
+                    if (numberList.Contains(Convert.ToInt32(numberArray[i])))
+                        Console.WriteLine("duplicates");
+
+                    numberList.Add(Convert.ToInt32(numberArray[i]));
+                }        
+            }
         }
     }
 }
