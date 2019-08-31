@@ -31,25 +31,17 @@ namespace DateFromNow
 
                 Console.WriteLine("year: " + year + "\nmonth: " + month + "\nday: " + day);
 
-                if (year != oldYear)
-                {
                     var yearDifference = (year - oldYear) * 365;
-                    Console.WriteLine("day difference is " + yearDifference);
+                 
                     daysAgo += yearDifference;
-           
-                }
 
-                if(month != oldMonth)
-                {
                     var monthDifference = (month - oldMonth) * 30;
                     daysAgo += monthDifference;
-                }
-                if (day != oldDay)
-                {
-                    var dayDifference = (day - oldDay);
+
+                    var dayDifference = day - oldDay;
                     daysAgo += dayDifference;
-                }
-               
+
+                Console.WriteLine("day difference is " + daysAgo);
             }
             else
             {
