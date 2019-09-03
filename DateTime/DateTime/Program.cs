@@ -19,7 +19,6 @@ namespace Datetime
             var minute = now.Minute;
 
             // immutable
-
             var tomorrow = now.AddDays(1);
             //Console.WriteLine(tomorrow);
 
@@ -30,8 +29,6 @@ namespace Datetime
             Console.WriteLine(now.ToShortTimeString());
 
             //Console.WriteLine(now.ToString());
-
-
             //Console.WriteLine(hour + ":" + minute);
         }
     }
