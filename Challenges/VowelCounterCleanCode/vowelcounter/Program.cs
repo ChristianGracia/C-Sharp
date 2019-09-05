@@ -6,20 +6,28 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a word for the vowels to be counter");
+            Console.WriteLine("Enter a word for the vowels to be counted");
             var word = Console.ReadLine().ToLower();
-      
+
+            var vowelCount = VowelCounter(word);
+            Console.WriteLine(vowelCount);
+
+        }
+
+        public static string VowelCounter(string word)
+        {
+
             var letterArray = new string[word.Length];
 
             for (int i = 0; i < word.Length; i++)
             {
-                letterArray[i] = word.Substring(i,1);
+                letterArray[i] = word.Substring(i, 1);
 
             }
 
             var vowelCounter = 0;
-    
-            for (var i = 0; i < letterArray.Length-1; i++)
+
+            for (var i = 0; i < letterArray.Length - 1; i++)
             {
                 switch (letterArray[i])
                 {
@@ -41,9 +49,11 @@ namespace ConsoleApp1
                     default:
                         break;
                 }
-           
+
             }
-            Console.WriteLine("vowel counter: " + vowelCounter);
+
+            return vowelCounter.ToString();
+
         }
 
     }
