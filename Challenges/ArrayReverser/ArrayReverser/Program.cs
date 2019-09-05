@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Linq;
 
 namespace ArrayReverser
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Enter name to be reversed");
             var name = Console.ReadLine();
@@ -12,7 +13,7 @@ namespace ArrayReverser
             Console.WriteLine(name.Length);
 
             var array = new char[length];
-            
+
             for (var i = 0; i < length; i++)
             {
                 array[i] = name[i];
@@ -20,14 +21,8 @@ namespace ArrayReverser
 
             Array.Reverse(array);
 
-            string reverse = "";
+            var reverse = array.Aggregate("", (current, item) => current + (char) item);
 
-            for (var x = 0; x < array.Length; x++)
-            {
-                reverse += (char) array[x];
-
-            }
-    
             Console.WriteLine(reverse);
         }
     }
