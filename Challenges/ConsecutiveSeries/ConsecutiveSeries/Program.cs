@@ -2,27 +2,31 @@
 
 namespace ConsecutiveSeries
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var consecutiveFlag = true;
             Console.WriteLine("Input consecutive numbers seperated by a hyphen");
-            var input = Console.ReadLine();
-            Console.WriteLine(input);
-            var numberArray = input.Split("-");
+            var series = Console.ReadLine();
+            var result = ConsecutiveChecker(series);
+            Console.WriteLine(result);
+        }
 
-            foreach (var x in numberArray)
-                Console.WriteLine(x);
+        public static string ConsecutiveChecker(string series)
+        {
+            var result = "Consecutive! :)";
 
-            for (var i = 0; i < numberArray.Length -1; i++)
+            var consecutiveFlag = 1;
+            var numberArray = series.Split("-");
+
+            for (var i = 0; i < numberArray.Length - 1; i++)
                 if (Convert.ToInt32(numberArray[i]) != (Convert.ToInt32(numberArray[i + 1]) - 1))
-                    consecutiveFlag = false;
+                    consecutiveFlag = 0;
 
-            if (consecutiveFlag)
-                Console.WriteLine("Consecutive!");
-            else
-                Console.WriteLine("Not Consecutive");
+            if (consecutiveFlag == 0)
+                result = "Not Consecutive :(";
+
+            return result;
         }
     }
 }
