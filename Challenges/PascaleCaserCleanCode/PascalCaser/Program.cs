@@ -11,7 +11,6 @@ namespace PascalCaser
             var inputString = Console.ReadLine().ToLower();
             var pascalCaseString = PascalFunction(inputString);
             Console.WriteLine(pascalCaseString);
-
         }
 
         static string PascalFunction(string inputString)
@@ -22,7 +21,6 @@ namespace PascalCaser
             {
                 stringArray[i] = stringArray[i].Substring(0, 1).ToUpper() + stringArray[i].Substring(1);
             }
-
             return stringArray.Aggregate("", (current, item) => current + item);
         }
    
