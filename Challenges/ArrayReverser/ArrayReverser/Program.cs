@@ -3,27 +3,30 @@ using System.Linq;
 
 namespace ArrayReverser
 {
-    class Program
+    internal class Program
     {
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter name to be reversed");
-            var name = Console.ReadLine();
-            var length = name.Length;
-            Console.WriteLine(name.Length);
+            var word = Console.ReadLine();
+            var reversedWord = ReverseString(word);
+            Console.WriteLine("reversed word is: " + reversedWord);
+        }
 
+        public static string ReverseString(string name)
+        {
+            var length = name.Length;
             var array = new char[length];
 
             for (var i = 0; i < length; i++)
             {
                 array[i] = name[i];
             }
-
             Array.Reverse(array);
+            var reversedString = array.Aggregate("", (current, item) => current + (char)item);
 
-            var reverse = array.Aggregate("", (current, item) => current + (char) item);
+            return reversedString;
 
-            Console.WriteLine(reverse);
         }
     }
 }
