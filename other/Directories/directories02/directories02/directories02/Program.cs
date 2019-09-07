@@ -14,6 +14,11 @@ namespace directories02
             var path = @"C:\Projects\etc\hi.txt";
 
             Console.WriteLine("extension = " + Path.GetExtension(path));
+            Console.WriteLine("file name = " + Path.GetFileName(path));
+            Console.WriteLine("name without extension = " + Path.GetFileNameWithoutExtension(path));
+            Console.WriteLine("extension = " + Path.GetExtension(path));
+            Console.WriteLine("get directory name = " + Path.GetDirectoryName(path));
+
 
         }
     }
