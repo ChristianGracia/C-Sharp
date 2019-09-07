@@ -7,30 +7,43 @@ namespace files01
     {
         static void Main(string[] args)
         {
-            var path = @"c:\somefile.jpg";
+            var path = @"c:\projects\etc\hi1.txt";
 
-            File.Copy(@"c:\temp\myFile.jpg", @"d:\temp\myFile.jpg",true);
 
-            File.Delete(path);
+            //made file and copied text
+            //File.Copy(@"c:\projects\etc\hi1.txt", @"c:\projects\etc\hi2.txt", true);
 
-            if (File.Exists(path))
-            {
-                // do something
-            }
+            //var content = File.ReadAllText(path);
 
-            var content = File.ReadAllText(path);
+            //Console.WriteLine(content);
+            var path2 = @"c:\projects\etc\hi2.txt";
+            //var content = File.ReadAllText(path2);
+            //Console.WriteLine(content);
 
             var fileInfo = new FileInfo(path);
 
-            fileInfo.CopyTo("...");
-            fileInfo.Delete();
+            //if (fileInfo.Exists)
+            //{
+            //Console.WriteLine("File exists");
+
+            //}
+
+            var info = fileInfo.CopyTo(path2);
+            Console.WriteLine(info);
+            //fileInfo.Delete();
+            //File.Delete(path2);
+
             if (fileInfo.Exists)
             {
-                //use filestream for fileInfo 
+                Console.WriteLine("true");
+
             }
+            Console.WriteLine("deleted");
 
             // to read with file
-            File.ReadAllText();
+
+            //File.ReadAllText();
+      
         }
     }
 }
