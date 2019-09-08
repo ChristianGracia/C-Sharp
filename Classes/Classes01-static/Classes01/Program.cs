@@ -26,7 +26,6 @@ namespace Classes01
         {
             var person = Person.Parse("john");
             person.Introduce("jake");
-            
         }
     }
 }
