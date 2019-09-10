@@ -1,29 +1,37 @@
 ﻿using System;
+using System.Threading;
 
 namespace StopWatch
 {
     public class Stopwatch
     {
+        
+        public DateTime StopTime { get; set; }
         public DateTime StartTime { get; set; }
+        public TimeSpan AddedTime { get; set; }
 
-        public Stopwatch(DateTime startTime)
+        public void Start()
         {
-            StartTime = startTime;
+            StartTime = DateTime.Now + AddedTime;
+            
+
         }
+        public void Stop()
+        {
+            StopTime = DateTime.Now + AddedTime; 
+
+        }
+
 
 
         public TimeSpan StopTimer
         {
             get
             {
-                var timeSpan = DateTime.Now - StartTime;
+                var timeSpan = StopTime - StartTime;
                 return timeSpan;
             }
 
-
         }
-
-
-
     }
 }

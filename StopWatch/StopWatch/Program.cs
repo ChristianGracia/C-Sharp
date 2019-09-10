@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Dynamic;
+using System.Threading;
 
 namespace StopWatch
 {
@@ -7,15 +8,26 @@ namespace StopWatch
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Press start to start!");
-     
-            var startTime = DateTime.Now;
-            var timer = new Stopwatch(startTime);
+            var timer = new Stopwatch();
+            string answer;
+            do
+            {
+                Console.WriteLine("start stop or quit timer?");
+                answer = Console.ReadLine();
+                if (answer == "start")
+                {
+                    timer.Start();
+                }
 
-            var total = timer.StopTimer;
+                if (answer == "stop")
+                {
+                    timer.Stop();
+                    Console.WriteLine(timer.StopTimer);
 
-            Console.WriteLine(total);
-         
+                }
+            } while (true);
+
+
         }
     }
 }
