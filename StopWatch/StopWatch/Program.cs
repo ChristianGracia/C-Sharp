@@ -24,7 +24,7 @@ namespace StopWatch
                     timer.Stop();
                     TimeSpan addedTime = timer.StopTimer;
                     Console.WriteLine(timer.StopTimer);
-                    timer.Refresh(addedTime);
+                    timer.AddTime(addedTime);
                 }
                 else if (answer == "quit")
                     break;
