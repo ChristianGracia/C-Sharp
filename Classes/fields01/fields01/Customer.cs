@@ -22,6 +22,7 @@ namespace fields01
         public void Promote()
         {
             //readonly makes this not allowed to happen
+            //this would reset list otherwise
             Orders = new List<Order>();
         }
     }
