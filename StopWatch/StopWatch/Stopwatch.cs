@@ -12,6 +12,18 @@ namespace StopWatch
         }
 
 
+        public TimeSpan StopTimer
+        {
+            get
+            {
+                var timeSpan = DateTime.Now - StartTime;
+                return timeSpan;
+            }
+
+
+        }
+
+
 
     }
 }
