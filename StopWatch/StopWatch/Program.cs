@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Dynamic;
-using System.Threading;
 
 namespace StopWatch
 {
@@ -12,7 +10,7 @@ namespace StopWatch
             string answer;
             do
             {
-                Console.WriteLine("start stop or quit timer?");
+                Console.WriteLine("\nstart, stop, or quit timer?");
                 answer = Console.ReadLine();
                 if (answer == "start")
                 {
@@ -23,14 +21,12 @@ namespace StopWatch
                 {
                     timer.Stop();
                     TimeSpan addedTime = timer.StopTimer;
-                    Console.WriteLine(timer.StopTimer);
+                    Console.WriteLine("Total time: " + timer.StopTimer);
                     timer.AddTime(addedTime);
                 }
                 else if (answer == "quit")
                     break;
             } while (true);
-
-
         }
     }
 }

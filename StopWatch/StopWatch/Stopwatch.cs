@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Threading;
 
 namespace StopWatch
 {
@@ -15,16 +13,16 @@ namespace StopWatch
         {
             if (StartCheck)
                 throw new InvalidOperationException();
-            else
-            {
-                StartCheck = true;
-                StartTime = DateTime.Now + AddedTime;
-            }
+            StartCheck = true;
+            StartTime = DateTime.Now + AddedTime;
+            Console.WriteLine("\nTimer Started");
         }
         public void Stop()
         {
             StartCheck = false;
             StopTime = DateTime.Now + AddedTime;
+            Console.WriteLine("\nTimer Stopped");
+
         }
 
         public void AddTime(TimeSpan addedTime)
