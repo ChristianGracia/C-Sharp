@@ -15,11 +15,10 @@ namespace methods01
             var result = int.TryParse("adc", out number);
             if(result)
                 Console.WriteLine(number);
-            else
+            else 
             {
                 Console.WriteLine("conversion failed");
             }
-
         }
 
         static void UseParams()
