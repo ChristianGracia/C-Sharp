@@ -7,13 +7,12 @@ namespace properties01
         public string Name { get; set; }
         public string Username { get; set; }
         public DateTime Birthdate { get; private set; }
+
         public Person(DateTime birthdate)
         {
             Birthdate = birthdate;
         }
-       
-   
-        //use private modifier to disallow
+        
         public int Age
         {
             get
