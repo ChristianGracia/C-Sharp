@@ -19,12 +19,15 @@ namespace StopWatch
                     timer.Start();
                 }
 
-                if (answer == "stop")
+                else if (answer == "stop")
                 {
                     timer.Stop();
+                    TimeSpan addedTime = timer.StopTimer;
                     Console.WriteLine(timer.StopTimer);
-
+                    timer.Refresh(addedTime);
                 }
+                else if (answer == "quit")
+                    break;
             } while (true);
 
 

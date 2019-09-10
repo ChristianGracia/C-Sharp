@@ -5,7 +5,6 @@ namespace StopWatch
 {
     public class Stopwatch
     {
-        
         public DateTime StopTime { get; set; }
         public DateTime StartTime { get; set; }
         public TimeSpan AddedTime { get; set; }
@@ -13,25 +12,24 @@ namespace StopWatch
         public void Start()
         {
             StartTime = DateTime.Now + AddedTime;
-            
-
         }
         public void Stop()
         {
-            StopTime = DateTime.Now + AddedTime; 
-
+            StopTime = DateTime.Now + AddedTime;
         }
 
-
+        public void Refresh(TimeSpan addedTime)
+        {
+            AddedTime = addedTime;
+        }
 
         public TimeSpan StopTimer
         {
             get
             {
-                var timeSpan = StopTime - StartTime;
+                var timeSpan = StopTime - StartTime + AddedTime;
                 return timeSpan;
             }
-
         }
     }
 }
