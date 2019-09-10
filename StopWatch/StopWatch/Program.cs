@@ -10,23 +10,9 @@ namespace StopWatch
        
             var startTime = DateTime.Now;
 
-            var startTime1 = new Stopwatch(DateTime.Now);
+            var start = new Stopwatch(startTime);
+            Console.WriteLine(start.StartTime);
 
         }
     }
-
-    public class Stopwatch
-    {
-        public DateTime StartTime { get; set; }
-
-        public DateTime Start(DateTime startTime)
-        {
-            return startTime;
-
-        }
-
-
-
-    }
-
 }
