@@ -2,7 +2,6 @@
 
 namespace inheritance02
 {
-    //: points to inherit from Presentation Object
     public class Text : PresentationObject
     {
         public int FontSize { get; set; }
@@ -14,12 +13,5 @@ namespace inheritance02
 
         }
 
-    }
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
     }
 }
