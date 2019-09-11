@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccessModifiersPrivate", "AccessModifiersPrivate\AccessModifiersPrivate.csproj", "{7FD088C0-3F71-446A-8665-7E3B0E134374}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{5E94550F-2EED-432A-AB45-E22EE9CA49E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleLibrary", "Library\GoogleLibrary.csproj", "{5E94550F-2EED-432A-AB45-E22EE9CA49E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

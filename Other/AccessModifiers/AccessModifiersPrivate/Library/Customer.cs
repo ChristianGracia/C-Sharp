@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AccessModifiersPrivate
+namespace Library
 {
     public class Customer
     {
@@ -9,9 +9,10 @@ namespace AccessModifiersPrivate
 
         public void Promote()
         {
-            var rating = CalculateRating(ignoreOrder: true);
+            var calculator = new RateCalculator();
+            var rating = calculator.Calculate();
+            Console.WriteLine("promote logic changed");
 
-            Console.WriteLine(rating == 0 ? "promoted to customer level 1" : "promoted to customer level 2");
         }
         private int CalculateRating(bool ignoreOrder)
         {
