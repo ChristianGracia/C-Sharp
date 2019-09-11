@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinishLineGame", "FinishLineGame\FinishLineGame.csproj", "{2C8807F6-A500-4352-AE8A-8A5502D4B100}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C8807F6-A500-4352-AE8A-8A5502D4B100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8807F6-A500-4352-AE8A-8A5502D4B100}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8807F6-A500-4352-AE8A-8A5502D4B100}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8807F6-A500-4352-AE8A-8A5502D4B100}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2F5E59E-802B-4C31-A549-63B1B109EC75}
+	EndGlobalSection
+EndGlobal

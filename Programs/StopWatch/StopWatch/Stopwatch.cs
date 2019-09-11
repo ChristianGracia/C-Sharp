@@ -22,7 +22,6 @@ namespace StopWatch
             StartCheck = false;
             StopTime = DateTime.Now + AddedTime;
             Console.WriteLine("\nTimer Stopped");
-
         }
 
         public void AddTime(TimeSpan addedTime)
