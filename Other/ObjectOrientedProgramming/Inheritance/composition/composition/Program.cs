@@ -2,21 +2,19 @@
 
 namespace composition
 {
-    public class Installer
-    {
-        
-        private readonly Logger _logger;
-
-        public Installer(Logger logger)
-        {
-            _logger = logger;
-        }
-    }
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var db = new Migrator(new Logger());
+
+            var logger = new Logger();
+            var installer = new Installer(logger);
+
+            db.Migrate();
+            installer.Install();
+
         }
+        
     }
 }

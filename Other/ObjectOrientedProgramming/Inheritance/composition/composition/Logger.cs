@@ -4,7 +4,7 @@ namespace composition
 {
     public class Logger
     {
-        public void log(string message)
+        public void Log(string message)
         {
             Console.WriteLine(message);
         }
