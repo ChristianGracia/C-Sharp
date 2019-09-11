@@ -25,15 +25,4 @@ namespace AccessModifiers2
             return 0;
         }
     }
-
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-            var person = new Customer();
-            person.Promote();
-        }
-    }
-
 }
