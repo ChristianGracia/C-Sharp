@@ -2,7 +2,7 @@
 {
     public class RateCalculator
         {
-            internal int Calculate()
+            public int Calculate()
             {
                 return 0;
             }

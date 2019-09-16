@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Specialized;
 using Library;
 
 namespace AccessModifiersPrivate
@@ -9,8 +8,8 @@ namespace AccessModifiersPrivate
         static void Main(string[] args)
         {
             var person = new Customer();
-            person.Promote();
-            Console.WriteLine();
+         
+
         }
     }
 }
