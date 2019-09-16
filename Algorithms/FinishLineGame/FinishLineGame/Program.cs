@@ -20,8 +20,10 @@ namespace FinishLineGame
             var redDie = new Die();
             redDie.Roll(rand);
             Card aCard = new Card(0, 11);
-
+    
             Console.WriteLine("this card is {0}", aCard.Display());
+
+   
         }
     }
 }
