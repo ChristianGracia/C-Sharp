@@ -15,7 +15,6 @@ namespace StopWatch
                 {
                     timer.Start();
                 }
-
                 else if (answer == "stop")
                 {
                     timer.Stop();

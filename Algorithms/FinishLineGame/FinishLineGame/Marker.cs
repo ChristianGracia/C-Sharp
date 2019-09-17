@@ -6,21 +6,18 @@ namespace FinishLineGame
     {
         public int Position;
         public string Name;
+        public bool Stopped;
 
         public Marker(string name)
         {
             this.Position = 0;
             this.Name = name;
+            this.Stopped = false;
         }
 
-        public void Move()
+        public void Move(int spaces)
         {
-
-        }
-
-        public static implicit operator Marker(string v)
-        {
-            throw new NotImplementedException();
+            this.Position += spaces;
         }
     }
 }
