@@ -16,6 +16,8 @@ namespace Mario
                 input = Console.ReadLine();
             }
             Console.WriteLine("height: " + height);
+
+
             var spaceNumber = height;
 
             for (var rows = 0; rows < height + 1; rows++)
