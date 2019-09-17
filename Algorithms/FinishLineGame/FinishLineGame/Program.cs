@@ -16,14 +16,19 @@ namespace FinishLineGame
     {
         static void Main(string[] args)
         {
+            int[] suits = new int [4] {0, 1, 2, 3};
+            int[] values = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
             var rand = new Random();
-            var redDie = new Die();
-            redDie.Roll(rand);
-            Card aCard = new Card(0, 11);
-    
-            Console.WriteLine("this card is {0}", aCard.Display());
 
-   
+            var deck = new Deck(suits, values, 2);
+
+            Console.WriteLine(deck.Cards[23].Display());
+            deck.Shuffle(rand);
+            Console.WriteLine(deck.Cards[23].Display());
+            Console.WriteLine("\u2660");
+
+
+
         }
     }
 }
