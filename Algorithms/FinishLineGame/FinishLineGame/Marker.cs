@@ -1,4 +1,6 @@
-﻿namespace FinishLineGame
+﻿using System;
+
+namespace FinishLineGame
 {
     public class Marker
     {
@@ -14,6 +16,11 @@
         public void Move()
         {
 
+        }
+
+        public static implicit operator Marker(string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

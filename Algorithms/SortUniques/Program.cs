@@ -2,13 +2,36 @@
 
 namespace sortUniques
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+
+
+
+            var userInput = UserInput();
+            var sortedArray = ArraySorter(userInput);
+            Console.WriteLine(sortedArray);
+        }
+
+        static string ArraySorter(int[] numbers)
+        {
+            Array.Sort(numbers);
+
+            var result = "";
+
+            foreach (var x in numbers)
+                result += x.ToString();
+
+            return result;
+        }
+
+        static int[] UserInput()
+        {
             int[] numbers = new int[5];
-         
-            for (var x = 0; x < 5;) {
+
+            for (var x = 0; x < 5;)
+            {
                 Console.WriteLine("Put 5 unique numbers to be sorted: ");
                 var number = Int32.Parse(Console.ReadLine());
 
@@ -21,10 +44,9 @@ namespace sortUniques
                 else
                     Console.WriteLine("invalid input, please put in unique name");
             }
-           Array.Sort(numbers);
 
-            foreach (var x in numbers)
-                Console.WriteLine(x);
+            return numbers;
+
         }
     }
 }
