@@ -6,9 +6,6 @@ namespace sortUniques
     {
         static void Main(string[] args)
         {
-
-
-
             var userInput = UserInput();
             var sortedArray = ArraySorter(userInput);
             Console.WriteLine(sortedArray);
@@ -20,8 +17,7 @@ namespace sortUniques
 
             var result = "";
 
-            foreach (var x in numbers)
-                result += x.ToString();
+            foreach (var x in numbers) result += x.ToString();
 
             return result;
         }
@@ -46,7 +42,6 @@ namespace sortUniques
             }
 
             return numbers;
-
         }
     }
 }
