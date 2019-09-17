@@ -7,17 +7,17 @@ namespace FinishLineGame
     {
         public List<Card> Cards = new List<Card>();
 
-        public Deck(int[] suits, int[] values, int numOfJokers)
+        public Deck(int[] Values, int[] Suits, int NumOfJokers)
         {
-            foreach (int suit in suits)
+            foreach (int suit in Suits)
             {
-                foreach (var value in values)
+                foreach (var value in Values)
                 {
                     this.Cards.Add(new Card(value, suit));
                 }
             }
 
-            for (int jkr = 0; jkr < numOfJokers; jkr++)
+            for (int jkr = 0; jkr < NumOfJokers; jkr++)
             {
                 this.Cards.Add(new Card(0, 0));
             }

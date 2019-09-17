@@ -13,6 +13,7 @@
         }
         public void Move(int spaces, int stopValue)
         {
+            this.Move(spaces);
 
         }
     }

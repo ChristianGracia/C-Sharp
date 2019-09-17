@@ -6,16 +6,15 @@ namespace FinishLineGame
     {
         public int Suit;
         public int Value;
-        private Dictionary<int, string> suitMap = new Dictionary<int, string>
+        private Dictionary<int, string> SUIT_MAP = new Dictionary<int, string>
         {
             {0, "\u2663" },
             {1, "\u2660" },
             {2, "\u2665" },
             {3, "\u2666" }
-
         };
 
-        private Dictionary<int, string> valMap = new Dictionary<int, string>
+        private Dictionary<int, string> VAL_MAP = new Dictionary<int, string>
         {
             {1, "Ac"},
             {10, "10"},
@@ -35,10 +34,10 @@ namespace FinishLineGame
             if (this.Value == 0)
                 return "Jkr";
 
-            if (this.valMap.ContainsKey(this.Value))
-                return this.suitMap[this.Suit] + this.valMap[this.Value];
+            if (this.VAL_MAP.ContainsKey(this.Value))
+                return this.SUIT_MAP[this.Suit] + this.VAL_MAP[this.Value];
 
-            return (this.suitMap[this.Suit] + "0" + this.Value);
+            return (this.SUIT_MAP + "0" + this.Value);
 
         }
     }

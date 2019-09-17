@@ -9,7 +9,7 @@ namespace FinishLineGame
 
         public Marker(string name)
         {
-            this.Position = 0;
+            this.Position = -1;
             this.Name = name;
         }
 
