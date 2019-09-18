@@ -20,29 +20,28 @@ namespace Stack_Class
 
     public class Stack
     {
-
-        public List<object> ItemList;
+        private readonly List<object> _itemList;
 
         public Stack()
         {
-            this.ItemList = new List<object>();
+            this._itemList = new List<object>();
 
         }
 
         public void Push(object item)
         {
-            this.ItemList.Add((object)item);
+            this._itemList.Add((object)item);
 
         }
 
         public object Pop()
         {
-            var length = this.ItemList.Count;
+            var length = this._itemList.Count;
 
             if (length > 0)
             {
-                object item = (object) this.ItemList[length - 1];
-                this.ItemList.RemoveAt(length - 1);
+                object item = (object) this._itemList[length - 1];
+                this._itemList.RemoveAt(length - 1);
                 return item;
             }
             else
