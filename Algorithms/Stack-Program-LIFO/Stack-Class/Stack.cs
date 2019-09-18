@@ -17,7 +17,7 @@ namespace Stack_Class
             var element = (object) item;
             if ( element!= null)
             {
-                this._itemList.Add((object) item);
+                this._itemList.Add(element);
             }
             else
                 throw new ArgumentNullException();
