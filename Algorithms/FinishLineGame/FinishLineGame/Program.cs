@@ -24,7 +24,6 @@ namespace FinishLineGame
             Console.WriteLine("red die is {0}", game.RedDie.Val);
             Console.WriteLine("black die is {0}", game.BlackDie.Val);
             game.DisplayBoard();
-         
         }
     }
 }

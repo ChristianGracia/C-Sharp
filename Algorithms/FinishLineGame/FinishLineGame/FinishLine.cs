@@ -30,10 +30,18 @@ namespace FinishLineGame
 
         public void DisplayBoard()
         {
-            string master = "";
+            string master = "\t";
+            int counter = 0;
+
             foreach (Card card in this.Deck.Cards)
             {
                 master += "[" + card.Display() + "]\t";
+                counter++;
+                if (counter == 9)
+                {
+                    counter = 0;
+                    master += "\n\n\t";
+                }
             }
             Console.WriteLine(master);
 
