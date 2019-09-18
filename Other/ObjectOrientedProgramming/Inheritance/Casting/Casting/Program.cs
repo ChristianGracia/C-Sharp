@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Casting
@@ -27,6 +29,15 @@ namespace Casting
 
 
 
+            //this may get exceptions when compiled 
+            //due to changing types in arrays
+            var arrayList = new ArrayList();
+            arrayList.Add(1);
+            arrayList.Add("Mosh");
+            arrayList.Add(new Text());
+
+            //use lists instead because controlled types
+            var anotherList = new List<Shape>();
 
         }
     }
