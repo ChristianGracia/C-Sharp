@@ -28,9 +28,16 @@ namespace WpfApp01
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             // downcasted to have access of all props and methods of button class
-            var button = (Button) sender;
+            //var button = (Button) sender;
+
+            //alt method - safer if unknown type of object
+            var button = sender as Button;
+            if (button != null)
+            {
+                MessageBox.Show(button.ActualHeight.ToString());
+            }
+
         
-            MessageBox.Show("hiiiiiiiiiiiiiiii");
         }
     }
 }
