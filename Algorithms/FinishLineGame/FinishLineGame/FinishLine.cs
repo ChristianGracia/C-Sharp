@@ -21,6 +21,22 @@ namespace FinishLineGame
             this.Player1 = new Player(player1Name, this.MARKER_NAMES);
             this.Rand = new Random();
             this.Deck = new Deck(this.VALUES, this.SUITS, NUM_JOKERS);
+            this.RedDie = new Die(6, 0xFF0000);
+            this.BlackDie = new Die(6, 0x000000);
+            this.Deck.Shuffle(Rand);
+            this.RedDie.Roll(Rand);
+            this.BlackDie.Roll(Rand);
+        }
+
+        public void DisplayBoard()
+        {
+            string master = "";
+            foreach (Card card in this.Deck.Cards)
+            {
+                master += "[" + card.Display() + "]\t";
+            }
+            Console.WriteLine(master);
+
         }
     }
 }

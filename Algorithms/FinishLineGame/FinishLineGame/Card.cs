@@ -37,7 +37,7 @@ namespace FinishLineGame
             if (this.VAL_MAP.ContainsKey(this.Value))
                 return this.SUIT_MAP[this.Suit] + this.VAL_MAP[this.Value];
 
-            return (this.SUIT_MAP + "0" + this.Value);
+            return this.SUIT_MAP[this.Suit] + "0" + this.Value;
 
         }
     }
