@@ -9,19 +9,9 @@ namespace override02
         {
             foreach (var shape in shapes)
             {
-                switch (shape.Type)
-                {
-                    case ShapeType.Circle:
-                      //draw circle
-                        break;
-
-                    case ShapeType.Rectangle:
-                       //draw rectangle
-                        break;
-
-                }
+                //polymorphism
+                shape.Draw();
             }
-
         }
     }
 

@@ -1,34 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace override02
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-        }
-    }
+            var shapes = new List<Shape>();
+            shapes.Add(new Circle());
+            shapes.Add(new Rectangle());
 
-    public class Canvas
-    {
-        public void DrawShapes(List<Shape> shapes)
-        {
-            foreach (var shape in shapes)
-            {
-                switch (shape.Type)
-                {
-                    case ShapeType circle:
-                        Console.WriteLine("draw a circle");
-                        break;
-                    case ShapeType.Rectangle:
-                        Console.WriteLine("draw a rectangle");
-                        break;
-
-                }
-            }
-
+            var canvas = new Canvas();
+            canvas.DrawShapes(shapes);
         }
     }
 }

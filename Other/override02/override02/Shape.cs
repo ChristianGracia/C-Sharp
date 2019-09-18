@@ -1,4 +1,6 @@
-﻿namespace override02
+﻿using System.Buffers.Text;
+
+namespace override02
 {
     public class Shape
     {
@@ -10,17 +12,5 @@
         {
 
         }
-
-    }
-    public class Circle : Shape
-    {
-        
-
-
-    }
-
-    public class Rectangle : Shape
-    {
-
     }
 }
