@@ -10,9 +10,8 @@ namespace Library
         public void Promote()
         {
             var calculator = new RateCalculator();
-            var rating = calculator.Calculate();
+            var rating = calculator.Calculate(this);
             Console.WriteLine("promote logic changed");
-
         }
         private int CalculateRating(bool ignoreOrder)
         {

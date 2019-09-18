@@ -8,7 +8,6 @@ namespace AccessModifiersPrivate
         static void Main(string[] args)
         {
             var person = new Customer();
-         
 
         }
     }
