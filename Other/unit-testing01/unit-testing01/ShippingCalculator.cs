@@ -3,7 +3,7 @@ namespace unit_testing01
 {
     public class ShippingCalculator
     {
-        public float CalculateShipping(OrderProcessor order)
+        public float CalculateShipping(Order order)
         {
             if (order.TotalPrice < 30f)
                 return order.TotalPrice * 0.1f;

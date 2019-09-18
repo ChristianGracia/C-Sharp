@@ -2,12 +2,12 @@
 
 namespace unit_testing01
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             var orderProcessor = new OrderProcessor();
-            var order = new Order {DatePlaced = DateTime.Now, TotalPrice = 100f};
+            var order = new Order(DateTime.Now, 100f);
             orderProcessor.Process(order);
             Console.WriteLine(order.DatePlaced);
             
