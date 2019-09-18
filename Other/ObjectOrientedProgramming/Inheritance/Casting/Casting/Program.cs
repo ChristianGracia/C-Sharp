@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Casting
 {
@@ -18,7 +19,11 @@ namespace Casting
 
             ////text.width = 100 because text and shape
             ////reference the same object. just dif views
-      
+
+
+            ////this gets upcasted to its parent class: stream
+            ////any class that derives from stream class
+            //StreamReader reader = new StreamReader(new FileStream());
 
 
 
