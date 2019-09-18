@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ArrayConverter
+namespace   WordReader
 {
     class Program
     {
@@ -9,7 +9,12 @@ namespace ArrayConverter
             Console.WriteLine("enter path of text file to be converted to array: \n");
             var path = "C:\\projects\\etc\\lorem.txt";
             string text = System.IO.File.ReadAllText(path);
-            Console.WriteLine(text);
+            text.Split("\n");
+            foreach (var item in text)
+            {
+                Console.WriteLine(item);
+                
+            }
 
 
 
