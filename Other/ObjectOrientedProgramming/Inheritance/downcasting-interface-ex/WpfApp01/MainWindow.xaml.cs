@@ -27,6 +27,9 @@ namespace WpfApp01
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // downcasted to have access of all props and methods of button class
+            var button = (Button) sender;
+        
             MessageBox.Show("hiiiiiiiiiiiiiiii");
         }
     }
