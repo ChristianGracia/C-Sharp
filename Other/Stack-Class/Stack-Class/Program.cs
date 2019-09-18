@@ -11,10 +11,12 @@ namespace Stack_Class
             stack.Push(1);
             stack.Push(2);
             stack.Push(3);
+            stack.Push("hi");
+            stack.Push("sup");
+            stack.Push(3);
             Console.WriteLine(stack.Pop());
             Console.WriteLine(stack.Pop());
             Console.WriteLine(stack.Pop());
-
         }
     }
 
@@ -25,13 +27,17 @@ namespace Stack_Class
         public Stack()
         {
             this._itemList = new List<object>();
-
         }
 
         public void Push(object item)
         {
-            this._itemList.Add((object)item);
-
+            var element = (object) item;
+            if ( element!= null)
+            {
+                this._itemList.Add((object) item);
+            }
+            else
+                throw new ArgumentNullException();
         }
 
         public object Pop()
@@ -46,9 +52,6 @@ namespace Stack_Class
             }
             else
                 throw new InvalidOperationException();
-
         }
-
-
     }
 }
