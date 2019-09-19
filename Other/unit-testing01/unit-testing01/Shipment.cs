@@ -4,9 +4,9 @@ namespace unit_testing01
 {
     public class Shipment
     {
-        public int Cost;
+        public float Cost;
         public DateTime ShippingDate;
-        public Shipment(int cost, DateTime shippingDate)
+        public Shipment(float cost, DateTime shippingDate)
         {
             this.Cost = cost;
             this.ShippingDate = shippingDate;

@@ -6,9 +6,9 @@ namespace unit_testing01
     {
         private readonly IShippingCalculator _shippingCalculator;
 
-        public OrderProcessor()
+        public OrderProcessor(IShippingCalculator shippingCalculator)
         {
-            _shippingCalculator = new ShippingCalculator();
+            _shippingCalculator = shippingCalculator;
         }
 
         public void Process(Order order)
@@ -16,21 +16,7 @@ namespace unit_testing01
             if (order.IsShipped)
                 throw new InvalidOperationException("This order has already been processed");
 
-            order.Shipment = new Shipment(_shippingCalculator.CalculateShipping(order), DateTime.Today.AddDays(2))
-    
+            order.Shipment = new Shipment(_shippingCalculator.CalculateShipping(order), DateTime.Today.AddDays(2));
         }
-
-    }
-    public class Shipment
-    {
-        public int Cost;
-        public DateTime ShippingDate;
-        public Shipment(int Cost, DateTime ShippingDate)
-        {
-            this.Cost = Cost;
-            this.ShippingDate = ShippingDate;
-
-        }
-
     }
 }

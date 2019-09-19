@@ -8,6 +8,7 @@ namespace unit_testing01
     }
 
     //acts similar to inheritance but very different
+    //inheritance reuses code, had to manually type out
     public class ShippingCalculator : IShippingCalculator
     {
         public float CalculateShipping(Order order)
