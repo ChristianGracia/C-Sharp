@@ -27,7 +27,7 @@ namespace Extensibility
         {
             using (var streamWriter = new StreamWriter(_path, true))
             {
-                streamWriter.WriteLine(messageType + ": " message);
+                streamWriter.WriteLine(messageType + ": " + message);
             }
 
         }
