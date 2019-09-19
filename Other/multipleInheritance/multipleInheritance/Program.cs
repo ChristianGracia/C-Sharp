@@ -1,30 +1,13 @@
-﻿using System;
-using System.Drawing;
-
-namespace multipleInheritance
+﻿namespace multipleInheritance
 {
     class Program
     {
         static void Main(string[] args)
         {
-            
-        }
-    }
-
-    public class UiControl
-    {
-        public string Id { get; set; }
-        public Size Size { get; set; }
-        public Position TopLeft { get; set; }
-
-        public virtual void Draw()
-        {
-
-        }
-
-        public void Focus()
-        {
-            Console.WriteLine("Received focus");
+            //no code reusability
+            //but provides polymorphic behavior
+            //interfaces just require same params, public, method name
+            //to implement
         }
     }
 }
