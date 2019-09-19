@@ -1,13 +1,11 @@
 ﻿using System;
+using System.Net.Http;
 
 namespace polymorphism02
 {
     public class MailService
     {
-        public void Send(Mail mail)
-        {
-            Console.WriteLine("sending email");
-        }
+
         
     }
 }

@@ -1,0 +1,12 @@
+﻿using System;
+
+namespace polymorphism02
+{
+    public class SmsNotifcationChannel : INotificationChannel
+    {
+        public void Send(Message message)
+        {
+            Console.WriteLine("sending sms...");
+        }
+    }
+}
