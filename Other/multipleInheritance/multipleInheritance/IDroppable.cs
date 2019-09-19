@@ -2,6 +2,6 @@
 {
     public interface IDroppable
     {
-        throw new NotImplementedException();
+        void Drop();
     }
 }

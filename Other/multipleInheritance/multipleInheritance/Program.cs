@@ -7,7 +7,7 @@ namespace multipleInheritance
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 
@@ -26,21 +26,5 @@ namespace multipleInheritance
         {
             Console.WriteLine("Received focus");
         }
-    }
-
-
-
-    public class TextBox : UiControl, IDraggable, IDroppable
-    {
-        public void Drag()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Drop()
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }

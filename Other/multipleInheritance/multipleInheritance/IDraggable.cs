@@ -2,6 +2,6 @@
 {
     public interface IDraggable
     {
-        throw new NotImplementedException();
+        void Drag()
     }
 }
