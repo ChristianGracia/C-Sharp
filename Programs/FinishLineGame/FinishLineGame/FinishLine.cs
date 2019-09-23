@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace FinishLineGame
 {
@@ -8,6 +9,7 @@ namespace FinishLineGame
         private readonly int[] VALUES = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
         private static int NUM_JOKERS = 2;
         private readonly string[] MARKER_NAMES = new string[] {"a", "b", "c"};
+        private readonly int[] Restricted_Values = new int[] {0, 1, 2, 11, 12, 13};
         public Deck Deck;
         public Die RedDie;
         public Die BlackDie;
@@ -53,6 +55,16 @@ namespace FinishLineGame
                 }
             }
             Console.WriteLine(Master);
+
+       
+        }
+        public void ValidateDeck()
+        {
+            for (int position = 0; position < 3; position++)
+            {
+                Array.IndexOf(Restricted_Values, this.Deck.Cards[position].Value)
+            }
+
         }
     }
 }
