@@ -15,5 +15,23 @@
                 this.Markers[markerName] = new Marker (markerNames[markerName]);
             }
         }
+
+        public string HasMarkersAt(int position)
+        {
+            string master = "";
+            foreach (var marker in this.Markers)
+            {
+                if (marker.Position == position)
+                {
+                    master += marker.Name;
+                }
+                else
+                {
+                    master += " ";
+                }
+            }
+
+            return master;
+        }
     }
 }
