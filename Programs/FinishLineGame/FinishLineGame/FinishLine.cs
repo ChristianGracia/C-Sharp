@@ -6,7 +6,7 @@ namespace FinishLineGame
     {
         private readonly int[] SUITS = new int[] { 0, 1, 2, 3 };
         private readonly int[] VALUES = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
-        private const int NUM_JOKERS = 2;
+        private static int NUM_JOKERS = 2;
         private readonly string[] MARKER_NAMES = new string[] {"a", "b", "c"};
         public Deck Deck;
         public Die RedDie;
@@ -30,21 +30,29 @@ namespace FinishLineGame
 
         public void DisplayBoard()
         {
-            string master = "\t";
+            Console.Clear();
+            string Master = "";
+            string CardRow = "\t";
+            string PlayerRow = "\t";
             int counter = 0;
-
             foreach (Card card in this.Deck.Cards)
             {
-                master += "[" + card.Display() + "]\t";
+                CardRow += "|" + card.Display() + "|";
+                PlayerRow += " " + this.Player1.HasMarkersAt(counter) + " ";
                 counter++;
-                if (counter == 9)
+                if (counter % 9 == 0)
                 {
-                    counter = 0;
-                    master += "\n\n\t";
+                    Master += CardRow + "\n" + PlayerRow + "\n\n";
+                    CardRow = "\t";
+                    PlayerRow = "\t";
+                }
+                else
+                {
+                    CardRow += "\t";
+                    PlayerRow += "\t";
                 }
             }
-            Console.WriteLine(master);
-
+            Console.WriteLine(Master);
         }
     }
 }
