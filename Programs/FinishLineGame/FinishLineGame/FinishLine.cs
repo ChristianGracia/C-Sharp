@@ -26,6 +26,7 @@ namespace FinishLineGame
             this.RedDie = new Die(6, 0xFF0000);
             this.BlackDie = new Die(6, 0x000000);
             this.Deck.Shuffle(Rand);
+            ValidateDeck();
             this.RedDie.Roll(Rand);
             this.BlackDie.Roll(Rand);
         }
@@ -58,13 +59,41 @@ namespace FinishLineGame
 
        
         }
-        public void ValidateDeck()
+        public void ValidateDeck(int position)
         {
-            for (int position = 0; position < 3; position++)
+            for ( position = 0; position < 3; position++)
             {
-                Array.IndexOf(Restricted_Values, this.Deck.Cards[position].Value)
+                if (Array.IndexOf(Restricted_Values, this.Deck.Cards[position].Value) >= 0)
+                {
+                    while (true)
+                    {
+                        int newPosition = this.Rand.Next(3, 51);
+                        if (Array.IndexOf(Restricted_Values, this.Deck.Cards[newPosition].Value) >= 0)
+                        {
+                            continue;
+
+                        }
+
+                        Card temp = this.Deck.Cards[position];
+                        this.Deck.Cards[position] = this.Deck.Cards[newPosition];
+                        this.Deck.Cards[newPosition] = temp;
+
+                        break;
+                    }
+                }
             }
 
+ 
         }
+        public void ValidateDeck()
+        {
+            int[] Restricted_Positions = {0, 1, 2, 11, 12, 13};
+            foreach (var position in Restricted_Positions)
+            {
+                ValidateDeck();
+                
+            }
+        }
+
     }
 }

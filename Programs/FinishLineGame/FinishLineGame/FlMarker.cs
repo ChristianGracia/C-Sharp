@@ -11,8 +11,10 @@
             this.Stopped = false;
 
         }
-        public void Move(int spaces, int stopValue)
+        public void Move(int spaces, int stopValue, Deck gameDeck)
         {
+            for(int position = this.Position; position <= position + spaces; position++)
+
             this.Move(spaces);
 
         }
