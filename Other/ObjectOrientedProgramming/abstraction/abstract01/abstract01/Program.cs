@@ -9,10 +9,6 @@ namespace abstract01
             Circle circle = new Circle();
             circle.SayShape();
             circle.Draw();
-            
-
-
-            
         }
     }
 
@@ -28,6 +24,7 @@ namespace abstract01
 
      class Circle : Shapes
     {
+        //needs override
         public override void Draw()
         {
             Console.WriteLine("circle");
