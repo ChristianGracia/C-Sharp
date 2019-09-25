@@ -6,21 +6,21 @@ namespace Overriding03
     {
         static void Main(string[] args)
         {
-            var person = new People();
-            person.SayName();
+            People[] people = new People[4];
 
-            var joe = new Joe();
-            joe.SayName();
+            people[0] = new People();
 
+            people[1] = new Joe();
 
-            var brett = new Brett();
-            brett.SayName();
+            people[2] = new Brett();
+            //gets overrides by parent method
 
+            people[3] = new Dan();
 
-            var Dan = new Dan();
-            Dan.SayName();
-
-
+            foreach (var person in people)
+            {
+                person.SayName();
+            }
         }
     }
 
@@ -39,26 +39,26 @@ namespace Overriding03
         public override void SayName()
         {
             Console.WriteLine("My name is " + Name);
-        } 
+        }
     }
 
     public class Brett : People
     {
         public string BrettName = "Brett";
+
         public void SayName()
         {
             Console.WriteLine("My name is " + BrettName);
         }
-
     }
 
     public class Dan : People
     {
         public string Name = "Dan";
+
         public override void SayName()
         {
             Console.WriteLine("My name is " + Name);
         }
-
     }
 }
