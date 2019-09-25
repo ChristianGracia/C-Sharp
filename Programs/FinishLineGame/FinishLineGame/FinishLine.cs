@@ -71,7 +71,6 @@ namespace FinishLineGame
                         if (Array.IndexOf(Restricted_Values, this.Deck.Cards[newPosition].Value) >= 0)
                         {
                             continue;
-
                         }
 
                         Card temp = this.Deck.Cards[position];
@@ -82,8 +81,6 @@ namespace FinishLineGame
                     }
                 }
             }
-
- 
         }
         public void ValidateDeck()
         {
