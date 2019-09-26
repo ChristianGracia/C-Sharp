@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+//import static service
+using WebApplication1.Services;
+
 namespace WebApplication1
 {
     public class Startup
@@ -31,7 +34,7 @@ namespace WebApplication1
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddTransient<StaticService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -51,6 +54,8 @@ namespace WebApplication1
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.Run((context) =>  throw new Exception() );
             app.UseCookiePolicy();
 
             app.UseMvc();
