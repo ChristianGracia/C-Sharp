@@ -13,7 +13,7 @@ namespace FinishLineGame
             this.Name = name;
         }
 
-        public virtual void Move(int spaces)
+        public void Move(int spaces)
         {
             this.Position += spaces;
         }

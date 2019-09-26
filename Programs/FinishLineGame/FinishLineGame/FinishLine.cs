@@ -98,5 +98,20 @@ namespace FinishLineGame
             player.Markers[0].Move(stopValue, stopValue, this.Deck);
         }
 
+        public void Round()
+        {
+            Turn(Player1);
+        }
+
+        public void PlayGame()
+        {
+            while (true)
+            {
+                Round();
+                break;
+            }
+
+        }
+
     }
 }
