@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -55,7 +56,15 @@ namespace WebApplication1
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.Run((context) =>  throw new Exception() );
+            app.Run((context) =>
+            {
+                var names = StaticService.GetNames();
+                StringBuilder builder = new StringBuilder();
+                foreach (var name in names)
+                {
+                    
+                }
+            });
             app.UseCookiePolicy();
 
             app.UseMvc();

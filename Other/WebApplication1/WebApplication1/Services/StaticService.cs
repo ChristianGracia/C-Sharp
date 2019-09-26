@@ -7,7 +7,7 @@ namespace WebApplication1.Services
 {
     public class StaticService
     {
-        public List<string> GetNames()
+        public static List<string> GetNames()
         {
             return new List<string>()
             {
