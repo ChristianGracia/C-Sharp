@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WebApplication1.Services;
 //import static service
 
-namespace DeliverStaticHtml
+namespace Site
 {
     public class Startup
     {
