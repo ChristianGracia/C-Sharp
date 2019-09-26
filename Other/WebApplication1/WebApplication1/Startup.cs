@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+
 //import static service
 using WebApplication1.Services;
 
@@ -56,14 +57,19 @@ namespace WebApplication1
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.Run((context) =>
+
+            //deliver html
+            app.Run(async (context) =>
             {
                 var names = StaticService.GetNames();
                 StringBuilder builder = new StringBuilder();
                 foreach (var name in names)
                 {
-                    
+                    builder.Append(name + " ");
+
                 }
+
+                await context.Response.WriteAsync(builder.ToString());
             });
             app.UseCookiePolicy();
 
