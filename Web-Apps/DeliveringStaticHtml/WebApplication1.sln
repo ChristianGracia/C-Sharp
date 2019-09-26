@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{BECDDA9E-8D7B-49EE-9AD5-1514DF8F4981}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliverStaticHtml", "WebApplication1\DeliverStaticHtml.csproj", "{BECDDA9E-8D7B-49EE-9AD5-1514DF8F4981}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

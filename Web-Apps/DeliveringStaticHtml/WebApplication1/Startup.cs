@@ -1,21 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
-
-//import static service
 using WebApplication1.Services;
+//import static service
 
-namespace WebApplication1
+namespace DeliverStaticHtml
 {
     public class Startup
     {
@@ -58,7 +51,6 @@ namespace WebApplication1
             app.UseStaticFiles();
 
 
-            //deliver html
             app.Run(async (context) =>
             {
                 var names = StaticService.GetNames();
