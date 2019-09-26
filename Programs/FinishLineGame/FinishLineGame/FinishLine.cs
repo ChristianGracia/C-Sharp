@@ -95,19 +95,21 @@ namespace FinishLineGame
             this.BlackDie.Roll(this.Rand);
             int stopValue = this.RedDie.Val + this.BlackDie.Val;
             master += "Red: " + this.RedDie.Val + "\tBlack" + this.BlackDie.Val + "\tStop Value: " + stopValue + "\n";
+
+            GetMarker("Red", RedDie, player, stopValue, master );
+            GetMarker("Black", BlackDie, player, stopValue, master);
+      
+        }
+
+        public void GetMarker(string dieName, Die die, Player player, int stopValue, string master)
+        {
             Console.WriteLine(master);
-            Console.WriteLine("Choose marker (a,b,c) for red die");
+            Console.WriteLine("Choose marker (a,b,c) for {0}", dieName);
             string input = Console.ReadLine();
             int inputIndex = player.FindMarker(input.ToUpper());
-            player.Markers[inputIndex].Move(RedDie.Val, BlackDie.Val, this.Deck);
+            player.Markers[inputIndex].Move(BlackDie.Val, BlackDie.Val, this.Deck);
             DisplayBoard();
-
-            Console.WriteLine(master);
-            Console.WriteLine("Choose marker (a,b,c) for black die");
-            Console.ReadLine();
-            player.Markers[1].Move(RedDie.Val, BlackDie.Val, this.Deck);
-            DisplayBoard();
-        }
+    }
 
         public void Round()
         {
