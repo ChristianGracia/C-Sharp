@@ -95,7 +95,17 @@ namespace FinishLineGame
             this.BlackDie.Roll(this.Rand);
             int stopValue = this.RedDie.Val + this.BlackDie.Val;
             master += "Red: " + this.RedDie.Val + "\tBlack" + this.BlackDie.Val + "\tStop Value: " + stopValue + "\n";
-            player.Markers[0].Move(stopValue, stopValue, this.Deck);
+            Console.WriteLine(master);
+            Console.WriteLine("Choose marker (a,b,c) for red die");
+            Console.ReadLine();
+            player.Markers[0].Move(RedDie.Val, BlackDie.Val, this.Deck);
+            DisplayBoard();
+
+            Console.WriteLine(master);
+            Console.WriteLine("Choose marker (a,b,c) for black die");
+            Console.ReadLine();
+            player.Markers[1].Move(RedDie.Val, BlackDie.Val, this.Deck);
+            DisplayBoard();
         }
 
         public void Round()
