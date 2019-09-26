@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 
 namespace FinishLineGame
 {
@@ -56,15 +55,11 @@ namespace FinishLineGame
                 }
             }
             Console.WriteLine(Master);
-
-       
         }
         public void ValidateDeck(int position)
         {
-            for ( position = 0; position < 3; position++)
-            {
-                if (Array.IndexOf(Restricted_Values, this.Deck.Cards[position].Value) >= 0)
-                {
+            if (Array.IndexOf(Restricted_Values, this.Deck.Cards[position].Value) >= 0)
+                
                     while (true)
                     {
                         int newPosition = this.Rand.Next(3, 51);
@@ -79,17 +74,28 @@ namespace FinishLineGame
 
                         break;
                     }
-                }
-            }
+                
+            
         }
         public void ValidateDeck()
         {
-            int[] Restricted_Positions = {0, 1, 2, 11, 12, 13};
+            int[] Restricted_Positions = {0, 1, 2, 51, 52, 53};
             foreach (var position in Restricted_Positions)
             {
-                ValidateDeck();
+                ValidateDeck(position);
                 
             }
+        }
+
+        public void Turn(Player player)
+        {
+            string master = "";
+            master += player.Name + "'s turn!\n";
+            this.RedDie.Roll(this.Rand);
+            this.BlackDie.Roll(this.Rand);
+            int stopValue = this.RedDie.Val + this.BlackDie.Val;
+            master += "Red: " + this.RedDie.Val + "\tBlack" + this.BlackDie.Val + "\tStop Value: " + stopValue + "\n";
+            player.Markers[0].Move(stopValue, stopValue, this.Deck);
         }
 
     }

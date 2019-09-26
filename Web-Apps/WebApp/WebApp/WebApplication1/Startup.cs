@@ -69,6 +69,8 @@ namespace Site
                 await context.Response.WriteAsync(builder.ToString());
             });
 
+
+            //middleware that catches exceptions
             app.Use(async (context, next) =>
             {
                 try
@@ -81,6 +83,9 @@ namespace Site
                     await context.Response.WriteAsync("Error occured")
                 }
             });
+            //another middleware that throws exceptions
+            app.Use((context, next) => { });
+
 
 
 
