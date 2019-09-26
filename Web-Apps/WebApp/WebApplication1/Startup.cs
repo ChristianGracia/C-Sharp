@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApplication1.Services;
@@ -57,7 +58,14 @@ namespace Site
                 StringBuilder builder = new StringBuilder();
                 foreach (var name in names)
                 {
-                    builder.Append(name + " ");
+                    if (Configuration.GetValue<bool>("CapitalizeWords"))
+                    {
+                        builder.Append(name.ToUpper() + " ");
+                    }
+                    else
+                    {
+                        builder.Append(name + " ");
+                    }
                 }
 
                 await context.Response.WriteAsync(builder.ToString());
