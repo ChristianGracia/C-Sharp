@@ -33,5 +33,16 @@
 
             return master;
         }
+
+        public int FindMarker(string query)
+        {
+            for (int counter = 0; counter < this.Markers.Length; counter++)
+            {
+                if (Markers[counter].Name == query)
+                    return counter;
+            }
+
+            return -1;
+        }
     }
 }

@@ -97,8 +97,9 @@ namespace FinishLineGame
             master += "Red: " + this.RedDie.Val + "\tBlack" + this.BlackDie.Val + "\tStop Value: " + stopValue + "\n";
             Console.WriteLine(master);
             Console.WriteLine("Choose marker (a,b,c) for red die");
-            Console.ReadLine();
-            player.Markers[0].Move(RedDie.Val, BlackDie.Val, this.Deck);
+            string input = Console.ReadLine();
+            int inputIndex = player.FindMarker(input.ToUpper());
+            player.Markers[inputIndex].Move(RedDie.Val, BlackDie.Val, this.Deck);
             DisplayBoard();
 
             Console.WriteLine(master);
