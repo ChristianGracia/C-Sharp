@@ -20,7 +20,7 @@ namespace SortedLists01
 
             //add
             sortedList.Add(1, "Jan");
-            sortedList.Add(2, "Jan");
+            sortedList.Add(2, "Feb");
             sortedList.Add(3, "March");
             sortedList.Add(4, "April");
             sortedList.Add(5, "May");
@@ -34,31 +34,45 @@ namespace SortedLists01
             Console.WriteLine("\nUpdated List\n");
 
             //item to be added and sorted accordingly
-            sortedList.Add(0, "null");
+            sortedList.Add(0, "november");
 
             //display list with new item to be sorted
             foreach (DictionaryEntry item in sortedList)
                 Console.WriteLine(item.Key + ": " + item.Value);
 
-            Console.WriteLine("\nwith for loop\n");
+            //Console.WriteLine("\nwith for loop\n");
 
             //display values with for loop
             for (var i = 0; i < sortedList.Count; i++)
             {
-                Console.WriteLine(sortedList.GetKey(i) + ": " + sortedList.GetByIndex(i));
+                //Console.WriteLine(sortedList.GetKey(i) + ": " + sortedList.GetByIndex(i));
             }
 
-            Console.WriteLine("\nby index\n");
+            Console.WriteLine("\nby index");
             //by index
             Console.WriteLine(sortedList[5].ToString());
             //capacity
-            Console.WriteLine("\n" + sortedList.Capacity + "\n");
+            Console.WriteLine("\ncapacity: " + sortedList.Capacity + "\n");
 
             //remove
             sortedList.Remove(1);
 
             //check what list has by key
             Console.WriteLine(sortedList.Contains(1));
+
+            //check what list has by value
+            Console.WriteLine(sortedList.ContainsValue("Jan"));
+
+            Console.WriteLine("\n");
+
+            //copy to array list
+            ArrayList array = new ArrayList(sortedList.Values);
+
+            //display array
+            foreach (var item in array)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
