@@ -20,10 +20,18 @@ namespace SortedLists01
 
             //add
             sortedList.Add(1, "Jan");
-            sortedList.Add(1, "Feb");
-            sortedList.Add(1, "March");
-            sortedList.Add(1, "April");
-            sortedList.Add(1, "May");
+            sortedList.Add(2, "Feb");
+            sortedList.Add(3, "March");
+            sortedList.Add(4, "April");
+            sortedList.Add(5, "May");
+            sortedList.Add(6, "June");
+
+            //display
+            foreach (DictionaryEntry item in sortedList)
+            {
+                Console.WriteLine(item.Key + ": " + item.Value
+                                  );
+            }
 
         }
     }
