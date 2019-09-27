@@ -109,7 +109,7 @@ namespace FinishLineGame
             int inputIndex = player.FindMarker(input.ToUpper());
             player.Markers[inputIndex].Move(BlackDie.Val, BlackDie.Val, this.Deck);
             DisplayBoard();
-    }
+        }
 
         public void Round()
         {
