@@ -37,6 +37,25 @@ namespace HashTable01
             {
                 Console.WriteLine(item.Key + ": " + item.Value);
             }
+
+            //get capacity
+            Console.WriteLine("\ncount is " + hash.Count + "\n");
+
+            //remove a value
+            hash.Remove("panda");
+            hash.Remove("pandaa");
+            hash.Remove("pandaaa");
+
+            Console.WriteLine("after panda removal\n");
+
+            //display removed
+            foreach (DictionaryEntry item in hash)
+            {
+                Console.WriteLine(item.Key + ": " + item.Value);
+            }
+
+
+    
         }
     }
 
