@@ -54,6 +54,30 @@ namespace HashTable01
                 Console.WriteLine(item.Key + ": " + item.Value);
             }
 
+            //checking if item is in hash table
+            if (hash.Contains("dog"))
+            {
+                Console.WriteLine("\ndog found");
+                Console.WriteLine("dog removed");
+            }
+
+            hash.Remove("dog");
+            
+            if(!hash.Contains("dog"))
+                Console.WriteLine("dog not here :(");
+
+            //copy to ArrayList
+            //can copy keys or values
+
+            ArrayList array = new ArrayList(hash.Keys);
+
+            Console.WriteLine("\narray contains: \n");
+
+            foreach (var item in array)
+            {
+                Console.WriteLine(item);
+            }
+
 
     
         }
