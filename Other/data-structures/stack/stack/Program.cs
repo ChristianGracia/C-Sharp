@@ -23,6 +23,10 @@ namespace stack
                 Console.WriteLine(item);
 
             //remove from stack
+            stack.Pop();
+            //display
+            foreach (var item in stack)
+                Console.WriteLine(item);
         }
     }
 }
