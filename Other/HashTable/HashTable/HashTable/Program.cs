@@ -77,9 +77,6 @@ namespace HashTable01
             {
                 Console.WriteLine(item);
             }
-
-
-    
         }
     }
 
