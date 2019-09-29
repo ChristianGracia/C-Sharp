@@ -8,7 +8,6 @@ namespace stack
         static void Main(string[] args)
         {
             //nongeneric collection, last in first out, push/pop
-
             //create stack
             Stack stack = new Stack();
 
