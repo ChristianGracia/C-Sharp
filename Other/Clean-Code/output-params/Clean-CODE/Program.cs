@@ -17,7 +17,9 @@ namespace Clean_Code
         public void DisplayCustomers()
         {
             int totalCount = 0;
-            var customers = GetCustomers(1, out totalCount);
+            var tuple = GetCustomers(1);
+            totalCount =  tuple.Item2;
+            var customers = tuple.Item1;
             Console.WriteLine("total customers " + totalCount);
 
             foreach (var c in customers)
