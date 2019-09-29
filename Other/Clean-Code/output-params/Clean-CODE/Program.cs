@@ -8,27 +8,27 @@ namespace Clean_Code
     {
         static void Main(string[] args)
         {
+            //avoid output params
+            //return an object from a method instead
      
         }
     }
 
     public class GetCustomersResult
     {
-        public IEnumerable<Customer> Item1 { get; set; }
-        public int Item2 { get; set; }
+        public IEnumerable<Customer> Customers { get; set; }
+        public int TotalCount { get; set; }
     }
-
+    
     public class OutputParams
     {
         public void DisplayCustomers()
         {
-            int totalCount = 0;
-            var tuple = GetCustomers(1);
-            totalCount =  tuple.Item2;
-            var customers = tuple.Item1;
-            Console.WriteLine("total customers " + totalCount);
+            const int pageIndex = 1;
+            var result = GetCustomers(pageIndex);
+            Console.WriteLine("total customers " + result.TotalCount);
 
-            foreach (var c in customers)
+            foreach (var c in result.Customers)
             {
                 Console.WriteLine(c);
             }
@@ -37,7 +37,7 @@ namespace Clean_Code
         public GetCustomersResult GetCustomers(int pageIndex)
         {
             var totalCount = 100;
-            return new GetCustomersResult() {Item1 = new List<Customer>(), Item2 = totalCount};
+            return new GetCustomersResult() {Customers = new List<Customer>(), Item2 = totalCount};
         }
     }
 }
