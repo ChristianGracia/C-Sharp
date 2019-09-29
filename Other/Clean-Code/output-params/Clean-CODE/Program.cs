@@ -26,10 +26,10 @@ namespace Clean_Code
             }
         }
 
-        public IEnumerable<Customer> GetCustomers(int pageIndex, out int totalCount)
+        public Tuple<IEnumerable<Customer>, int> GetCustomers(int pageIndex)
         {
-            totalCount = 100;
-            return new List<Customer>();
+            var totalCount = 100;
+            return Tuple.Create((IEnumerable<Customer>) new List<Customer>(), totalCount);
         }
     }
 }
