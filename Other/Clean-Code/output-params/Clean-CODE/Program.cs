@@ -12,6 +12,12 @@ namespace Clean_Code
         }
     }
 
+    public class GetCustomersResult
+    {
+        public IEnumerable<Customer> Item1 { get; set; }
+        public int Item2 { get; set; }
+    }
+
     public class OutputParams
     {
         public void DisplayCustomers()
@@ -28,10 +34,10 @@ namespace Clean_Code
             }
         }
 
-        public Tuple<IEnumerable<Customer>, int> GetCustomers(int pageIndex)
+        public GetCustomersResult GetCustomers(int pageIndex)
         {
             var totalCount = 100;
-            return Tuple.Create((IEnumerable<Customer>) new List<Customer>(), totalCount);
+            return new GetCustomersResult() {Item1 = new List<Customer>(), Item2 = totalCount};
         }
     }
 }
