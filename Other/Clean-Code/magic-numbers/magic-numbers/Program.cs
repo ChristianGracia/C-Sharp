@@ -6,7 +6,8 @@ namespace magic_numbers
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //avoid "magic numbers"
+            //use constant or enum
         }
     }
 
@@ -31,7 +32,7 @@ namespace magic_numbers
 
             ///////////method 1///////////////////////////////////////////////////////////
 
-            //refactor the 1/2
+            //refactor the magic numbers by introducing var
             //introduce variable
 
             //const int draft = 1;
