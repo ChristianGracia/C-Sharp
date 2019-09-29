@@ -20,6 +20,16 @@ namespace CleanCodeVarNames
             //meaningful
             //reveal intention
             //chose from problem domain
+
+                   
+            //poor method signatures
+            //try to avoid boolean flags in params
+
+            //always check with methods
+            //return type
+            //method name
+            //params
+            
         }
     }
 
