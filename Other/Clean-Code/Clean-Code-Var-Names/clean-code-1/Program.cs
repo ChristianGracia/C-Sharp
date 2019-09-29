@@ -30,6 +30,11 @@ namespace CleanCodeVarNames
             //method name
             //params
             
+
+            //extract class with params if method has too many params and params are related
+
+            //limit number of params to 3
+            //get rid of unneeded params or encapsulate into a class
         }
     }
 
