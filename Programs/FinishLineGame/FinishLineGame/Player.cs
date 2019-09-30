@@ -2,17 +2,17 @@
 {
     public class Player
     {
-        public Marker[] Markers;
+        public FlMarker[] Markers;
         public string Name;
 
         public Player(string name, string[] markerNames)
         {
-            this.Markers = new Marker[markerNames.Length];
+            this.Markers = new FlMarker[markerNames.Length];
             this.Name = name;
          
             for(int markerName = 0; markerName < markerNames.Length; markerName++)
             {
-                this.Markers[markerName] = new Marker (markerNames[markerName]);
+                this.Markers[markerName] = new FlMarker (markerNames[markerName]);
             }
         }
 

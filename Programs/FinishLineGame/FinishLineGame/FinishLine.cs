@@ -89,6 +89,7 @@ namespace FinishLineGame
 
         public void Turn(Player player)
         {
+            DisplayBoard();
             string master = "";
             master += player.Name + "'s turn!\n";
             this.RedDie.Roll(this.Rand);
@@ -115,9 +116,9 @@ namespace FinishLineGame
         {
 
             Turn(Player1);
-            if (DidWin(player1))
+            if (DidWin(Player1))
             {
-                return player1;
+                return Player1;
             }
 
             return null;
@@ -128,13 +129,16 @@ namespace FinishLineGame
         {
             while (true)
             {
-                Round();
-                break;
+                Player winner = Round();
+                if (winner != null)
+                {
+                    Console.WriteLine("congrats {0}, you win!", winner.Name);
+                    break;
+                }
             }
-
         }
 
-        public void DidWin(Player player)
+        private bool DidWin(Player player)
         {
             return player.HasMarkersAt(53) == "ABC";
         }
