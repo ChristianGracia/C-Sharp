@@ -107,14 +107,22 @@ namespace FinishLineGame
             Console.WriteLine("Choose marker (a,b,c) for {0}", dieName);
             string input = Console.ReadLine();
             int inputIndex = player.FindMarker(input.ToUpper());
-            player.Markers[inputIndex].Move(BlackDie.Val, BlackDie.Val, this.Deck);
+            player.Markers[inputIndex].Move(die.Val, stopValue, this.Deck);
             DisplayBoard();
         }
 
-        public void Round()
+        public Player Round()
         {
+
             Turn(Player1);
+            if (DidWin(player1))
+            {
+                return player1;
+            }
+
+            return null;
         }
+
 
         public void PlayGame()
         {
@@ -124,6 +132,11 @@ namespace FinishLineGame
                 break;
             }
 
+        }
+
+        public void DidWin(Player player)
+        {
+            return player.HasMarkersAt(53) == "ABC";
         }
 
     }
