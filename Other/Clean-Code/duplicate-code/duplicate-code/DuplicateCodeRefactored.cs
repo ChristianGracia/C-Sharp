@@ -6,11 +6,16 @@ namespace duplicate_code
     {
         public void AdmitGuest(string name, string admissionDateTime)
         {
+            GetTime(admissionDateTime, out var hours, out var minutes);
+        }
+
+        public static void GetTime(string admissionDateTime, out int hours, out int minutes)
+        {
             //logic
 
             int time;
-            int hours = 0;
-            int minutes = 0;
+            hours = 0;
+            minutes = 0;
 
             if (!string.IsNullOrWhiteSpace(admissionDateTime))
             {
@@ -21,29 +26,14 @@ namespace duplicate_code
                 }
             }
             else
-            {
                 throw new ArgumentException("AdmissionDateTime");
-            }
         }
 
         public void UpdateAdmission(string name, string admissionDateTime)
         {
-            int time;
-            int hours = 0;
-            int minutes = 0;
-
-            if (!string.IsNullOrWhiteSpace(admissionDateTime))
-            {
-                if (int.TryParse(admissionDateTime.Replace(":", ""), out time))
-                {
-                    hours = time / 100;
-                    minutes = time % 100;
-                }
-            }
-            else
-            {
-                throw new ArgumentException("AdmissionDateTime");
-            }
+            int hours;
+            int minutes;
+            GetTime(admissionDateTime, out hours, out minutes);
         }
     }
 }
