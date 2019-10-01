@@ -7,7 +7,7 @@ namespace duplicate_code
     {
         public void AdmitGuest(string name, string admissionDateTime)
         {
-            var time = Time.GetTime(admissionDateTime);
+            var time = Time.Parse(admissionDateTime);
         
             
 
@@ -18,7 +18,7 @@ namespace duplicate_code
 
         public void UpdateAdmission(string name, string admissionDateTime)
         {
-            var time = Time.GetTime(admissionDateTime);
+            var time = Time.Parse(admissionDateTime);
 
             //logic
             if (time.Hours < 10)

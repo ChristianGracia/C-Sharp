@@ -14,10 +14,7 @@
             //make out params tuple
             //convert tuple to type class
             //add GetTime method to Time class
-
-
-
-
+            //made Time class work universally
         }
     }
 
