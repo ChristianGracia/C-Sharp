@@ -6,10 +6,12 @@ namespace duplicate_code
     {
         public void AdmitGuest(string name, string admissionDateTime)
         {
-            GetTime(admissionDateTime, out var hours, out var minutes);
+            int hours;
+            int minutes;
+            GetTime(admissionDateTime, out hours, out  minutes);
         }
 
-        public static void GetTime(string admissionDateTime, out int hours, out int minutes)
+        public void GetTime(string admissionDateTime, out int hours, out int minutes)
         {
             //logic
 
