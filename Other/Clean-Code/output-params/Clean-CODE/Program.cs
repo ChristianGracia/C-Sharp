@@ -10,6 +10,8 @@ namespace Clean_Code
         {
             //avoid output params
             //return an object from a method instead
+
+            //highlight out paramas, transform out params, turns to tuple
      
         }
     }
