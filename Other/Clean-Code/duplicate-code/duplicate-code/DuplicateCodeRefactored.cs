@@ -2,22 +2,33 @@
 
 namespace duplicate_code
 {
+    public class Time
+    {
+        public int Item1 { get; set; }
+        public int Item2 { get; set; }
+
+        public Time(int item1, int item2)
+        {
+            Item1 = item1;
+            Item2 = item2;
+        }
+    }
     class DuplicateCodeRefactored
     {
         public void AdmitGuest(string name, string admissionDateTime)
         {
-            int hours;
-            int minutes;
-            GetTime(admissionDateTime, out hours, out  minutes);
+            var tuple = GetTime(admissionDateTime);
+            var hours = tuple.Item1;
+            var minutes = tuple.Item2;
         }
 
-        public void GetTime(string admissionDateTime, out int hours, out int minutes)
+        public Tuple<int, int> GetTime(string admissionDateTime)
         {
             //logic
 
             int time;
-            hours = 0;
-            minutes = 0;
+            var hours = 0;
+            var minutes = 0;
 
             if (!string.IsNullOrWhiteSpace(admissionDateTime))
             {
@@ -29,13 +40,15 @@ namespace duplicate_code
             }
             else
                 throw new ArgumentException("AdmissionDateTime");
+
+            return Tuple.Create(hours, minutes);
         }
 
         public void UpdateAdmission(string name, string admissionDateTime)
         {
-            int hours;
-            int minutes;
-            GetTime(admissionDateTime, out hours, out minutes);
+            var tuple = GetTime(admissionDateTime);
+            var hours = tuple.Item1;
+            var minutes = tuple.Item2;
         }
     }
 }
