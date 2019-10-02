@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FinishLineGame
 {
@@ -9,17 +10,20 @@ namespace FinishLineGame
         private static int NUM_JOKERS = 2;
         private readonly string[] MARKER_NAMES = new string[] {"a", "b", "c"};
         private readonly int[] Restricted_Values = new int[] {0, 1, 2, 11, 12, 13};
+        private Dictionary<int, string> MARKER_MAP = new Dictionary<int, string>();
+
+
         public Deck Deck;
         public Die RedDie;
         public Die BlackDie;
-        public Player Player1;
-        public int Players;
+        public Player[] Players;
+        public int numPlayers;
         public Random Rand;
 
-        public FinishLine(int players, string player1Name)
+        public FinishLine(int numPlayers, string[] playerNames)
         {
-            this.Players = players;
-            this.Player1 = new Player(player1Name, this.MARKER_NAMES);
+            this.numPlayers = numPlayers;
+            this.Players = new Player[numPlayers];
             this.Rand = new Random();
             this.Deck = new Deck(this.VALUES, this.SUITS, NUM_JOKERS);
             this.RedDie = new Die(6, 0xFF0000);
@@ -30,28 +34,62 @@ namespace FinishLineGame
             this.BlackDie.Roll(Rand);
         }
 
+        private void InitializePlayerRow(string[] playerRow)
+        {
+            for (int count = 0; count < this.numPlayers; count++)
+            {
+                playerRow[count] = "\t";
+            }
+        }
+
         public void DisplayBoard()
         {
             Console.Clear();
             string Master = "";
             string CardRow = "\t";
-            string PlayerRow = "\t";
+            string[] PlayerRow = new string[this.numPlayers];
+            InitializePlayerRow(PlayerRow);
+
+            foreach (var player in Players)
+            {
+                CardRow += player.Name + "\t";
+                PlayerRow[0] += player.HasMarkersAt(-1) + "\t";
+            }
+
+            Master += CardRow + "\n" + PlayerRow[0] + "\n\n";
+            CardRow = "\t";
+            InitializePlayerRow(PlayerRow);
+
             int counter = 0;
+
             foreach (Card card in this.Deck.Cards)
             {
                 CardRow += "|" + card.Display() + "|";
-                PlayerRow += " " + this.Player1.HasMarkersAt(counter) + " ";
+
+                for (var count = 0; count < this.numPlayers; count++)
+                {
+                    PlayerRow[count] += " " + this.Players[count].HasMarkersAt(counter) + " ";
+                }
+
                 counter++;
+
                 if (counter % 9 == 0)
                 {
-                    Master += CardRow + "\n" + PlayerRow + "\n\n";
+                    Master += CardRow + "\n";
+                    for (int count = 0; count < this.numPlayers; count++)
+                        Master += PlayerRow[count] + "\n";
+
+                    Master += "\n";
                     CardRow = "\t";
-                    PlayerRow = "\t";
+                    InitializePlayerRow(PlayerRow);
                 }
                 else
                 {
                     CardRow += "\t";
-                    PlayerRow += "\t";
+                    for (var count = 0; count < this.numPlayers; count++)
+                    {
+                        PlayerRow[count] += "\t";
+                    }
                 }
             }
 
@@ -113,15 +151,17 @@ namespace FinishLineGame
 
         public Player Round()
         {
-            Turn(Player1);
-            if (DidWin(Player1))
-            {
-                return Player1;
-            }
 
+            foreach (var player in Players)
+            {
+                Turn(player);
+                if (DidWin(player))
+                {
+                    return player;
+                }
+            }
             return null;
         }
-
 
         public void PlayGame()
         {

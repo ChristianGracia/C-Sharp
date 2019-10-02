@@ -7,7 +7,7 @@ namespace FinishLineGame
     {
         public static void Main(string[] args)
         {
-            var game = new FinishLine(1, "player1");
+            var game = new FinishLine(1, new string[] {"player1", "player2"});
             game.PlayGame();
         }
     }
