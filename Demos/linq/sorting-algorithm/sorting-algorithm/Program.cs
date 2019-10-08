@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Reflection.Metadata.Ecma335;
+using System.Linq;
 
 namespace sorting_algorithm
 {
@@ -8,10 +8,10 @@ namespace sorting_algorithm
         public static string GetForm(string query)
         {
             return query
-                .Split(new[] { " " })
-                .Select()
+                .Split(new [] { ' ' })
+                .Select(x => x.ToUpper())
+                .OrderBy(x => x)
+                .Aggregate((x, y) => x + " " + y);
         }
     }
-
-
 }
