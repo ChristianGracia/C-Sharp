@@ -7,6 +7,8 @@ namespace sorting_algorithm
     {
         public static string GetForm(string query)
         {
+            if (string.IsNullOrWhiteSpace(query))
+                throw new ArgumentNullException("query");
             return query
                 .Split(new [] { ' ' })
                 .Select(x => x.ToUpper())
