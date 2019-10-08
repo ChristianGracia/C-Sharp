@@ -7,13 +7,15 @@ namespace sorting_algorithm
     {
         public static string GetForm(string query)
         {
-            if (string.IsNullOrWhiteSpace(query))
-                throw new ArgumentNullException("query");
+            if (query == null)
+                throw new ArgumentNullException(nameof(query));
+
             return query
-                .Split(new [] { ' ' })
+                .Split(new [] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(x => x.ToUpper())
                 .OrderBy(x => x)
-                .Aggregate((x, y) => x + " " + y);
+                .Aggregate((x, y) => x + " " + y)
+                .Trim();
         }
     }
 }
