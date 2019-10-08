@@ -1,4 +1,3 @@
 # repo for C# programs
 
-over 75+ programs
-most are algorithms currently
+Contains a ton of programs written in C# by me
