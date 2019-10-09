@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using NUnit.Framework;
 
 namespace Tests
@@ -6,12 +7,12 @@ namespace Tests
     public class RomanNumeralsTests
     {
 
-        [Test]
-        public void Parse()
+        [TestCase(1, "I")]
+        [TestCase(5, "V")]
+        [TestCase(10, "X")]
+        public void Parse(int expected, string roman)
         {
-            Assert.AreEqual(1, Roman.Parse("1"));
-            Assert.AreEqual(5, Roman.Parse("V"));
-            Assert.AreEqual(10, Roman.Parse("X"));
+            Assert.AreEqual(expected, Roman.Parse(roman));
         }
     }
 
