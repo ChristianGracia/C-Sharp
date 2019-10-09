@@ -10,6 +10,7 @@ namespace Tests
         [TestCase("divisible by 5", 5)]
         [TestCase("not divisible 3 or 5", 7)]
         [TestCase("divisible by 5", 10)]
+        [TestCase("divisible by 5 and 3!!!!!!", 15)]
         public void TestMultiples(string expected, int number)
         {
             Assert.AreEqual(expected, Multiples(number));
@@ -17,6 +18,8 @@ namespace Tests
 
         private string Multiples(int number)
         {
+            if(number % 3 == 0 && number % 5 == 0)
+                return "divisible by 5 and 3!!!!!!";
             if (number % 3 == 0)
                 return "divisible by 3";
             if(number % 5 == 0)
