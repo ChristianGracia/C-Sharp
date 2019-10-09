@@ -9,11 +9,14 @@ namespace Tests
         public void TestMultiples()
         {
             Assert.AreEqual("divisible by 3", Multiples(3));
+            Assert.AreEqual("divisible by 5", Multiples(5));
         }
 
         private string Multiples(int number)
         {
-            return null;
+            if (number == 3)
+                return "divisible by 3";
+            return "divisible by 5";
         }
     }
 }
