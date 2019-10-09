@@ -9,15 +9,4 @@ namespace Tests01
             Console.WriteLine("Hello World!");
         }
     }
-
-    public class Calculator
-    {
-
-    public void Add()
-    {
-
-    }
-
-
-    }
 }

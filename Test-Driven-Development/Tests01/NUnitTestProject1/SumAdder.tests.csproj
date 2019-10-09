@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tests01\Tests01.csproj" />
+    <ProjectReference Include="..\Tests01\SumAdder.csproj" />
   </ItemGroup>
 
 </Project>
