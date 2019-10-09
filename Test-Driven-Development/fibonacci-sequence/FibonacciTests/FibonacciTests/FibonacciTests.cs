@@ -9,6 +9,7 @@ namespace fibonacci_sequence
         [TestCase(1, 1)]
         [TestCase(1, 2)]
         [TestCase(2, 3)]
+        [TestCase(5, 4)]
         public void TestFibonacci(int expected, int index)
         {
             Assert.AreEqual(expected, GetFibonacci(index));
