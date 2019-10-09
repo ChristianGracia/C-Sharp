@@ -9,4 +9,15 @@ namespace Tests01
             Console.WriteLine("Hello World!");
         }
     }
+
+    public class Calctotor
+    {
+   
+        public void Add()
+        {
+
+        }
+      
+
+    }
 }
