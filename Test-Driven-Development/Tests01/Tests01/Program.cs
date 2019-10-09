@@ -10,14 +10,14 @@ namespace Tests01
         }
     }
 
-    public class Calctotor
+    public class Calculator
     {
-   
-        public void Add()
-        {
 
-        }
-      
+    public void Add()
+    {
+
+    }
+
 
     }
 }
