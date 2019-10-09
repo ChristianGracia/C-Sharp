@@ -5,16 +5,17 @@ namespace Tests
     [TestFixture]
     public class MultiplesTest
     {
-        [Test]
-        public void TestMultiples()
+        [TestCase("divisible by 3", 3)]
+        [TestCase("divisible by 3", 6)]
+        [TestCase("divisible by 5", 5)]
+        public void TestMultiples(string expected, int number)
         {
-            Assert.AreEqual("divisible by 3", Multiples(3));
-            Assert.AreEqual("divisible by 5", Multiples(5));
+            Assert.AreEqual(expected, Multiples(number));
         }
 
         private string Multiples(int number)
         {
-            if (number == 3)
+            if (number % 3 == 0)
                 return "divisible by 3";
             return "divisible by 5";
         }
