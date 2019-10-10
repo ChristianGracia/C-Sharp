@@ -12,6 +12,10 @@ namespace Tests
         [TestCase(5, "V")]
         [TestCase(10, "X")]
         [TestCase(2, "II")]
+        [TestCase(4, "IV")]
+        [TestCase(4, "IV")]
+        [TestCase(14, "XIV")]
+        [TestCase(9, "IX")]
         public void Parse(int expected, string roman)
         {
             Assert.AreEqual(expected, Roman.Parse(roman));
@@ -35,7 +39,13 @@ namespace Tests
             int result = 0;
             for (int i = 0; i < roman.Length; i++)
             {
-                result += _map[roman[i]];
+                if(i + 1 < roman.Length && _map[roman[i]] < _map[roman[i + 1]])
+                    result -= _map[roman[i]];
+
+                else
+                {
+                    result += _map[roman[i]];
+                }
             }
 
             return result;
