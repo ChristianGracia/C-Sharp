@@ -1,7 +1,21 @@
 ﻿using System;
 
-namespace TDD_Course.TicTacToe
+namespace TicTacToeTDD
 {
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+    public enum State
+    {
+        Cross,
+        Zero,
+        Unset
+    }
+
     public class Game
     {
         public int MovesCounter { get; private set; }
@@ -17,9 +31,9 @@ namespace TDD_Course.TicTacToe
 
         public void MakeMove(int index)
         {
-            if(index < 1 || index > 9)
+            if (index < 1 || index > 9)
                 throw new ArgumentOutOfRangeException();
-            if(GetState(index) != State.Unset)
+            if (GetState(index) != State.Unset)
                 throw new InvalidOperationException();
 
             _board[index - 1] = MovesCounter % 2 == 0 ? State.Cross : State.Zero;
@@ -41,7 +55,7 @@ namespace TDD_Course.TicTacToe
 
         private Winner GetWinner(params int[] indexes)
         {
-            for (int i = 0; i < indexes.Length; i+=3)
+            for (int i = 0; i < indexes.Length; i += 3)
             {
                 bool same = AreSame(indexes[i],
                     indexes[i + 1],
@@ -65,4 +79,5 @@ namespace TDD_Course.TicTacToe
             return GetState(a) == GetState(b) && GetState(a) == GetState(c);
         }
     }
+
 }
