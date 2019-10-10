@@ -13,7 +13,6 @@ namespace Tests
         [TestCase(10, "X")]
         [TestCase(2, "II")]
         [TestCase(4, "IV")]
-        [TestCase(4, "IV")]
         [TestCase(14, "XIV")]
         [TestCase(9, "IX")]
         public void Parse(int expected, string roman)
