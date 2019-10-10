@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 
 namespace Tests
@@ -6,18 +7,44 @@ namespace Tests
         [TestFixture]
         public class TicTacToeTests
         {
-        [Test]
+            [Test]
             public void CreateGame_ZeroMoves()
             {
-                var game = new Game();
-                Assert.AreEqual(0, Game.MoveCounter);
+                Game game = new Game();
+                Assert.AreEqual(0, game.MoveCounter);
 
             }
 
-        }
+            [Test]
+            public void MakeMove_Increment()
+            {
+                Game game = new Game();
+                game.MakeMove(1);
+                Assert.AreEqual(1, game.MoveCounter);
+
+            }
+
+            [Test]
+            public void MakeInvalidMove_ThrowsException()
+            {
+                Assert.Throws<ArgumentOutOfRangeException>(() =>
+                {
+                    var game = new Game();
+                    game.MakeMove(0);
+                });
+            }
+
+    }
 
         public class Game
         {
-            public static int MoveCounter = 0;
+            public int MoveCounter { get; private set; }
+
+            public void MakeMove(int index)
+            {
+                if (index < 1 || index > 9)
+                    throw new ArgumentOutOfRangeException();
+                MoveCounter++;
+            }
         }
 }
