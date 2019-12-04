@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
@@ -14,16 +15,19 @@ namespace SeleniumScraper
 
         }
 
-        public string Scrape(string url)
+        public void Scrape()
         {
-            driver.Url = url;
+            driver.Url = "http://www.reddit.com";
+            IReadOnlyCollection<IWebElement> titles = driver.FindElements(By.TagName("h3"));
 
-            string title = driver.Title;
+            Console.WriteLine(titles.ToString());
+          
+
+
 
 
             driver.Close();
 
-            return title;
 
         }
     }

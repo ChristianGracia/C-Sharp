@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumScraper", "SeleniumScraper\SeleniumScraper.csproj", "{DAE5EA64-2C5D-496E-ABC6-A58BABC08D5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{FC191DF7-6EB4-4CDE-9B7E-264FDD25253B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumScraper.Tests", "UnitTests\SeleniumScraper.Tests.csproj", "{FC191DF7-6EB4-4CDE-9B7E-264FDD25253B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

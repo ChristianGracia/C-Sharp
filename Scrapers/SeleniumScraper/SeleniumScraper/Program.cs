@@ -11,6 +11,7 @@ namespace SeleniumScraper
         static void Main(string[] args)
         {
             Scraper scraper = new Scraper();
+            scraper.Scrape();
         }
     }
 }
