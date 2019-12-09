@@ -31,7 +31,7 @@ namespace Tests
             {'L', 50},
             {'C', 100},
             {'D', 500},
-            {'H', 1000},
+            {'M', 1000},
         };
         public static int Parse(string roman)
         {
