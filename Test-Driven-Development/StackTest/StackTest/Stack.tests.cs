@@ -11,17 +11,49 @@ namespace StackTest
         [Test]
         public void isEmpty_EmptyStack_ReturnsTrue()
         {
-            MyStack stack = new MyStack();
+            var stack = new MyStack<int>();
             Assert.IsTrue(stack.IsEmpty);
+
+        }
+
+        [Test]
+        public void Count_PushOneItem_ReturnsOne()
+        {
+            var stack = new MyStack<int>();
+            stack.Push(1);
+            Assert.AreEqual(1, stack.Count);
+            Assert.IsFalse(stack.IsEmpty);
+        }
+
+        [Test]
+        public void Pop_EmptyStack_ThrowsException()
+        {
+            var stack = new MyStack<int>();
+            Assert.Throws<InvalidOperationException>(() => { stack.Pop(); });
+        }
+
+        [Test]
+        public void Peek_PushTwoItems_ReturnsHeadItem()
+        {
 
         }
     }
 
-    public class MyStack
+    public class MyStack<T>
     {
-        public bool IsEmpty
+        public bool IsEmpty => Count == 0;
+        public int Count { get; private set; }
+
+        public void Push(T value)
         {
-            get { return true; }
+            Count++;
+
+        }
+
+        public void Pop()
+        {
+            if(IsEmpty)
+                throw new InvalidOperationException();
         }
     }
 }
