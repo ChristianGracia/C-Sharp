@@ -9,9 +9,9 @@ namespace ImmutableStackKata
                 throw new System.NotImplementedException();
             }
 
-            public IStack<T> Pop(T value)
+            public IStack<T> Pop()
             {
-                throw new System.NotImplementedException();
+                throw new System.InvalidOperationException();
             }
 
             public T Peek()
@@ -27,7 +27,7 @@ namespace ImmutableStackKata
             throw new System.NotImplementedException();
         }
 
-        public IStack<T> Pop(T value)
+        public IStack<T> Pop()
         {
             throw new System.NotImplementedException();
         }

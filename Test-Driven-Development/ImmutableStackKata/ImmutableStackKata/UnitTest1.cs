@@ -15,10 +15,11 @@ namespace ImmutableStackKata
         }
 
         [Test]
-        public void Peek_EmptyStack_ThrowsException()
+        public void PeekAndPop_EmptyStack_ThrowsException()
         {
             var emptyStack = ImmutableStack<int>.Empty;
             Assert.Throws<InvalidOperationException>(() => { emptyStack.Peek(); });
+            Assert.Throws<InvalidOperationException>(() => { emptyStack.Pop(); });
         }
 
 
