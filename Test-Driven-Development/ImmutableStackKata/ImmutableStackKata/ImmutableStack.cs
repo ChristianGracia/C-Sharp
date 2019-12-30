@@ -2,11 +2,12 @@ namespace ImmutableStackKata
 {
     public class ImmutableStack<T> : IStack<T>
     {
+
         private sealed class EmptyStack : IStack<T>
         {
             public IStack<T> Push(T value)
             {
-                throw new System.NotImplementedException();
+                return new ImmutableStack<T>(value);
             }
 
             public IStack<T> Pop()
@@ -22,9 +23,14 @@ namespace ImmutableStackKata
             public bool IsEmpty => true;
         }
 
+        private ImmutableStack(T head)
+        {
+            _head = head;
+        }
+
         public IStack<T> Push(T value)
         {
-            throw new System.NotImplementedException();
+            return new ImmutableStack<T>(value);
         }
 
         public IStack<T> Pop()
@@ -34,11 +40,12 @@ namespace ImmutableStackKata
 
         public T Peek()
         {
-            throw new System.NotImplementedException();
+            return _head;
         }
 
         public bool IsEmpty { get; }
         private static readonly EmptyStack _empty = new EmptyStack();
+        private readonly T _head;
         public static IStack<T> Empty => _empty;
     }
 }
