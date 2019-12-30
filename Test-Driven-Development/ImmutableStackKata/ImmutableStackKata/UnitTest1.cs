@@ -23,7 +23,7 @@ namespace ImmutableStackKata
         }
 
         [Test]
-        public void PushOnEmptyStackTwoItems_PeekOneElement_ReturnsCorrectValue()
+        public void PushOnEmptyStackTwoItems_PeekOneItem_ReturnsCorrectValue()
         {
             var stack = ImmutableStack<int>.Empty;
             stack = stack.Push(1);
@@ -33,7 +33,17 @@ namespace ImmutableStackKata
             Assert.AreEqual(2, result);
         }
 
-     
+        [Test]
+        public void PushOnEmptyStackOneItem_PopOneItem_ReturnsEmptyStack()
+        {
+            var stack = ImmutableStack<int>.Empty;
+            stack = stack.Push(1);
+            var result = stack.Pop();
+            Assert.IsTrue(result.IsEmpty);
+        }
+
+
+
     }
 
 }
