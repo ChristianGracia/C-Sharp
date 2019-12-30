@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 
 namespace ImmutableStackKata
@@ -11,6 +12,13 @@ namespace ImmutableStackKata
             var emptyStack = ImmutableStack<int>.Empty;
             Assert.IsTrue(emptyStack.IsEmpty);
 
+        }
+
+        [Test]
+        public void Peek_EmptyStack_ThrowsException()
+        {
+            var emptyStack = ImmutableStack<int>.Empty;
+            Assert.Throws<InvalidOperationException>(() => { emptyStack.Peek(); });
         }
 
 

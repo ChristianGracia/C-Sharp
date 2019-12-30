@@ -16,7 +16,7 @@ namespace ImmutableStackKata
 
             public T Peek()
             {
-                throw new System.NotImplementedException();
+                throw new System.InvalidOperationException();
             }
 
             public bool IsEmpty => true;
