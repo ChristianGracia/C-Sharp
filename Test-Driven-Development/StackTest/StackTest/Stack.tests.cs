@@ -35,18 +35,25 @@ namespace StackTest
         [Test]
         public void Peek_PushTwoItems_ReturnsHeadItem()
         {
+            var stack = new MyStack<int>();
+            stack.Push(1);
+            stack.Push(2);
+
+            Assert.AreEqual(2, stack.Peek());
 
         }
     }
 
     public class MyStack<T>
     {
+        private List<T> _list = new List<T>();
         public bool IsEmpty => Count == 0;
-        public int Count { get; private set; }
+
+        public int Count => _list.Count;
 
         public void Push(T value)
         {
-            Count++;
+            _list.Add(value);
 
         }
 
@@ -54,6 +61,11 @@ namespace StackTest
         {
             if(IsEmpty)
                 throw new InvalidOperationException();
+        }
+
+        public T Peek()
+        {
+            return _list[Count - 1];
         }
     }
 }
