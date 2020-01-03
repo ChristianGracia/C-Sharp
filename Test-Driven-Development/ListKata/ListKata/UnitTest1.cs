@@ -1,18 +1,24 @@
+using System.Collections.Generic;
 using NUnit.Framework;
 
 namespace ListKata
 {
-    public class Tests
+    [TestFixture]
+    public class LinkedListTests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
-        public void Test1()
+        public void CreateNode_SetsValueAndNextIsNull()
         {
-            Assert.Pass();
+            ListNode<int> node = new ListNode<int>();
+            Assert.AreEqual(1, node.Value);
+            Assert.IsNull(node.Next);
         }
     }
+
+    public class ListNode<T>
+    {
+        public object Next { get; set; }
+        public double Value { get; set; }
+    }
+
 }
