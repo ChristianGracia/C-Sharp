@@ -9,7 +9,7 @@ namespace ListKata
         [Test]
         public void CreateNode_SetsValueAndNextIsNull()
         {
-            ListNode<int> node = new ListNode<int>();
+            ListNode<int> node = new ListNode<int>(1);
             Assert.AreEqual(1, node.Value);
             Assert.IsNull(node.Next);
         }
@@ -17,8 +17,13 @@ namespace ListKata
 
     public class ListNode<T>
     {
-        public object Next { get; set; }
-        public double Value { get; set; }
+        public ListNode(T value)
+        {
+            Value = value;
+
+        } 
+        public ListNode<T> Next { get; set; }
+        public T Value { get; set; }
     }
 
 }
