@@ -13,6 +13,34 @@ namespace ListKata
             Assert.AreEqual(1, node.Value);
             Assert.IsNull(node.Next);
         }
+
+        [Test]
+        public void AddFirst_HeadAndTailAreSame()
+        {
+            MyLinkedList<int> list = new MyLinkedList<int>();
+            list.AddFirst(1);
+
+            Assert.AreEqual(1, list.Head.Value);
+            Assert.AreEqual(1, list.Tail.Value);
+            Assert.AreSame(list.Head, list.Tail );
+        }
+    }
+
+    public class MyLinkedList<T>
+    {
+        public ListNode<T> Tail { get; private set; }
+        public ListNode<T> Head { get; private set; }
+
+        public void AddFirst(T value)
+        {
+            AddFirst(new ListNode<T>(value));
+
+        }
+
+        private void AddFirst(ListNode<T> node)
+        {
+            Tail = Head = node;
+        }
     }
 
     public class ListNode<T>
