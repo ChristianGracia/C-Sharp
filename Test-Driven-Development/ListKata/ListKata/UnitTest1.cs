@@ -1,8 +1,6 @@
-using System.Collections.Generic;
 using NUnit.Framework;
-using NUnit.Framework.Api;
 
-namespace ListKata
+namespace LinkedListKata
 {
     [TestFixture]
     public class LinkedListTests
@@ -37,6 +35,16 @@ namespace ListKata
             Assert.AreSame(list.Head.Next, list.Tail);
 
         }
+
+        [Test]
+        public void AddLast_HeadAndTailAreSame()
+        {
+            var list = new MyLinkedList<int>();
+            list.AddLast(1);
+            Assert.AreEqual(1, list.Head.Value);
+            Assert.AreEqual(1, list.Tail.Value);
+            Assert.AreSame(list.Head,list.Tail);
+        }
     }
 
     public class MyLinkedList<T>
@@ -67,6 +75,18 @@ namespace ListKata
                 Tail = Head;
             }
 
+
+        }
+
+        public void AddLast(T value)
+        {
+            AddLast(new ListNode<T>(value));
+            
+        }
+
+        private void AddLast(ListNode<T> node)
+        {
+            Head = Tail = node;
 
         }
     }
