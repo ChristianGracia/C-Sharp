@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 
 namespace LinkedListKata
@@ -57,6 +58,18 @@ namespace LinkedListKata
             Assert.AreEqual(2, list.Count);
             Assert.AreSame(list.Head.Next, list.Tail);
         }
+
+        [Test]
+        public void RemoveFirst_EmptyList_Throws()
+        {
+            var list = new MyLinkedList<int>();
+          
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                list.RemoveFirst();
+            });
+
+        }
     }
 
     public class MyLinkedList<T>
@@ -109,6 +122,14 @@ namespace LinkedListKata
 
             Tail = node;
             Count++;
+        }
+
+        public void RemoveFirst()
+        {
+            if (Count == 0)
+            {
+                throw new InvalidOperationException();
+            }
         }
     }
 
