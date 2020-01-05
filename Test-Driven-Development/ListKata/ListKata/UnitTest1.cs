@@ -82,6 +82,44 @@ namespace LinkedListKata
             Assert.IsNull(list.Tail);
             Assert.AreEqual(0, list.Count);
         }
+
+        [Test]
+        public void RemoveLast_EmptyList_Throws()
+        {
+            var list = new MyLinkedList<int>();
+
+            Assert.Throws<InvalidOperationException>(() =>
+            {
+                list.RemoveLast();
+            });
+
+        }
+
+        [Test]
+        public void RemoveLast_OneElement_ListIsInCorrectState()
+        {
+            var list = new MyLinkedList<int>();
+            list.AddFirst(1);
+            list.RemoveLast();
+            Assert.IsNull(list.Head);
+            Assert.IsNull(list.Tail);
+            Assert.AreEqual(0, list.Count);
+        }
+
+        [Test]
+        public void RemoveLast_TwoElements_ListIsInCorrectState()
+        {
+            var list = new MyLinkedList<int>();
+
+            list.AddLast(1);
+            list.AddLast(2);
+
+            list.RemoveLast();
+            Assert.AreEqual(1, list.Head.Value);
+    
+            Assert.AreEqual(1, list.Count);
+            Assert.AreSame(list.Head, list.Tail);
+        }
     }
 
     public class MyLinkedList<T>
@@ -150,6 +188,36 @@ namespace LinkedListKata
                 Tail = null;
             }
             
+        }
+
+        public void RemoveLast()
+        {
+            if (Count == 0)
+            {
+                throw new InvalidOperationException();
+            }
+
+            if (Count == 1)
+            {
+                Head = null;
+                Tail = null;
+            }
+            else
+            {
+                ListNode<T> current = Head;
+                while (current.Next != Tail)
+                {
+                    current = current.Next;
+                }
+
+                current.Next = null;
+                Tail = current;
+
+            }
+
+
+            Count--;
+
         }
     }
 
