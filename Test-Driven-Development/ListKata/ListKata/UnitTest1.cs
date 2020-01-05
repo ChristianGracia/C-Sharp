@@ -1,5 +1,6 @@
 using System;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 
 namespace LinkedListKata
 {
@@ -70,6 +71,17 @@ namespace LinkedListKata
             });
 
         }
+
+        [Test]
+        public void RemoveFirst_OneElement_ListIsInCorrectState()
+        {
+            var list = new MyLinkedList<int>();
+            list.AddFirst(1);
+            list.RemoveFirst();
+            Assert.IsNull(list.Head);
+            Assert.IsNull(list.Tail);
+            Assert.AreEqual(0, list.Count);
+        }
     }
 
     public class MyLinkedList<T>
@@ -130,6 +142,14 @@ namespace LinkedListKata
             {
                 throw new InvalidOperationException();
             }
+            Head = Head.Next;
+            Count--;
+
+            if (Count == 0)
+            {
+                Tail = null;
+            }
+            
         }
     }
 
