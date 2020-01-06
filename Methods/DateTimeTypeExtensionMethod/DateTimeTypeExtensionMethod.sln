@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimeTypeExtensionMethod", "DateTimeTypeExtensionMethod\DateTimeTypeExtensionMethod.csproj", "{7C40361F-6BB5-44C5-AEC3-7167382451A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C40361F-6BB5-44C5-AEC3-7167382451A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C40361F-6BB5-44C5-AEC3-7167382451A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C40361F-6BB5-44C5-AEC3-7167382451A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C40361F-6BB5-44C5-AEC3-7167382451A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E57047A3-F6B5-4796-8190-E8F5E3C5DE80}
+	EndGlobalSection
+EndGlobal
