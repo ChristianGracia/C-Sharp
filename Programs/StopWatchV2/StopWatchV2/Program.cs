@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace StopWatchV2
 {
@@ -6,7 +7,14 @@ namespace StopWatchV2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+     
+            Stopwatch watch = new Stopwatch();
+            Console.WriteLine("Time: 00:00:00.0000000");
+          
+            watch.Start();
+            Loop(900_000_000);
+            watch.Stop();
+            Console.WriteLine(watch.Elapsed);
         }
 
         public static void Loop(long number)
