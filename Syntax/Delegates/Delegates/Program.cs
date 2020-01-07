@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 namespace Delegates
 {
     // void delegate with no argument
-
-    // void delegate with one string argument
-
-    // void delegate with one string argument and one int
-
-    // string delegate with one int argument 
-
     public delegate void PlayerInfoDelegate();
+    // void delegate with one string argument
+    public delegate void PlayerInfoDelegateWithName(string playerName);
+    // void delegate with one string argument and one int
+    public delegate void PlayerInfoDelegateWithScore(string playerName, int score);
+    // string delegate with one int argument 
+    public delegate string PlayerNameDelegate(int number);
+
+
 
     class Program
     {
@@ -23,6 +24,19 @@ namespace Delegates
 
             PlayerInfoDelegate chris = new PlayerInfoDelegate(DisplayInformation);
             chris.Invoke();
+
+
+            PlayerInfoDelegateWithName playerName = new PlayerInfoDelegateWithName(DisplayInformation);
+            playerName("joe");
+
+
+            PlayerInfoDelegateWithScore player = new PlayerInfoDelegateWithScore(DisplayInformation);
+            player("jake", 12);
+
+
+            PlayerNameDelegate name = new PlayerNameDelegate(DisplayInformation);
+            Console.WriteLine(name(7));
+
 
         }
 
@@ -36,9 +50,9 @@ namespace Delegates
             Console.WriteLine("Information about player : " + playerName);
         }
 
-        public static void DisplayInformation(string playerName, int goals)
+        public static void DisplayInformation(string playerName, int score)
         {
-            Console.WriteLine("Information about player : " + playerName + " and he score " + goals);
+            Console.WriteLine("Information about player : " + playerName + " and he scored " + score);
         }
 
         public static string DisplayInformation(int number)
