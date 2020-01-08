@@ -2,9 +2,10 @@
 
 namespace GenericDelegates
 {
+    public delegate T DisplayInfo<T>(T value);
     class Program
     {
-        public delegate T DisplayInfo<T>(T value);
+       
         static void Main(string[] args)
         {
             DisplayInfo<int> newNumber = new DisplayInfo<int>(DisplayValue);

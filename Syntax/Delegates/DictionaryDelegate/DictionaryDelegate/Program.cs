@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace DictionaryDelegate
 {
+    public delegate void DictionaryDisplayDelegate(Dictionary<int, string> dictionary);
+
     class Program
     {
-        public delegate void DictionaryDisplayDelegate(Dictionary<int, string> dictionary);
-
         static void Main(string[] args)
         {
             Dictionary<int, string> dict = new Dictionary<int, string>();

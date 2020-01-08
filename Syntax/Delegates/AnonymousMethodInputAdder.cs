@@ -2,10 +2,10 @@ using System;
 
 namespace ConsoleApp1
 {
+    delegate void AddNumsDelegate(int a, int b);
+    delegate void AddNumInputDelegate();
     class Program
     {
-        delegate void AddNumsDelegate(int a, int b);
-        delegate void AddNumInputDelegate();
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the anonymous function integer adder");
