@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuncWithAnonymousAndLambda", "FuncWithAnonymousAndLambda\FuncWithAnonymousAndLambda.csproj", "{60C0F656-9912-4680-858D-D51753BD5EBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60C0F656-9912-4680-858D-D51753BD5EBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60C0F656-9912-4680-858D-D51753BD5EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60C0F656-9912-4680-858D-D51753BD5EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60C0F656-9912-4680-858D-D51753BD5EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9449FD7-9C5C-4ADB-B26F-B02534814F7C}
+	EndGlobalSection
+EndGlobal
