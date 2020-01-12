@@ -24,11 +24,17 @@ namespace EventsMore
         {
             displayInfoInstance = new DisplayInformation();
             displayInfoInstance.DisplayDateAfterEvent += DisplayInfoInstance_DisplayDateAfterEvent;
+            displayInfoInstance.DisplayMessageBeforeEvent += DisplayInfoInstance_DisplayMessageBeforeEvent;
         }
 
         private void DisplayInfoInstance_DisplayDateAfterEvent()
         {
             Console.WriteLine("Information has been displayed on " + DateTime.Now.ToShortTimeString());
+        }
+
+        private void DisplayInfoInstance_DisplayMessageBeforeEvent()
+        {
+            Console.WriteLine("Event incoming");
         }
 
         public void DisplayClub(string club, string country)
@@ -47,17 +53,23 @@ namespace EventsMore
 
         public delegate void DisplayDateAfterDelegate();
 
+        public delegate void DisplayMessageBeforeDelegate();
+
         public event DisplayDateAfterDelegate DisplayDateAfterEvent;
+        public event DisplayMessageBeforeDelegate DisplayMessageBeforeEvent;
 
         public void DisplayClub(string clubName, string country)
         {
+            DisplayMessageBeforeEvent();
             Console.WriteLine($"{clubName} from {country}");
             DisplayDateAfterEvent(); Console.WriteLine();
         }
 
         public void DisplayPlayer(string playerName, string clubName)
         {
+            DisplayMessageBeforeEvent();
             Console.WriteLine($"{playerName} plays for {clubName}");
+            DisplayDateAfterEvent();
         }
     }
 }
