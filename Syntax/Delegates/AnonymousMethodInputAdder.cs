@@ -1,6 +1,6 @@
 using System;
 
-namespace ConsoleApp1
+namespace AnonMethodInputAdder
 {
     delegate void AddNumsDelegate(int a, int b);
     delegate void AddNumInputDelegate();
