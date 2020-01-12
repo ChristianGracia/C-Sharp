@@ -15,7 +15,6 @@ namespace RecursionFolderDisplay2
 
             DisplayFileInfoDelegate displayFiles = new DisplayFileInfoDelegate(DisplayFolders);
             displayFiles(path, 0);
-
         }
 
         private static void DisplayFolders(string path, int indent)
