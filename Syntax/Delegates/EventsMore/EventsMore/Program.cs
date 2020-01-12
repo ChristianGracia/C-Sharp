@@ -62,7 +62,7 @@ namespace EventsMore
         {
             DisplayMessageBeforeEvent();
             Console.WriteLine($"{clubName} from {country}");
-            DisplayDateAfterEvent(); Console.WriteLine();
+            DisplayDateAfterEvent();
         }
 
         public void DisplayPlayer(string playerName, string clubName)
